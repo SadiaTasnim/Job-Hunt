@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="JobDescription.aspx.cs" Inherits="JobHunt.JobDescription" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="JobDescriptionforcompany.aspx.cs" Inherits="JobHunt.JobDescriptionforcompany" %>
 
 <!DOCTYPE html>
 
@@ -47,13 +47,16 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">About Us</a>
-                        </li>                      
-                    </ul>
-                    <form class="btn-toolbar">
-
+                        </li>    
+                           <li class="nav-item">
+                                    <a class="nav-link" href="postajob.aspx" style="width: 80px;">Post a job</a>
+                           </li >
                        
-                        <asp:Button ID="Button2" runat="server" Text="Want A Job" CssClass="btn btn-dark" OnClick="want_a_job_Click"  />
-                    </form>              
+                           <li class="nav-item">
+                                <a class="nav-link" href="joblist.aspx" style="width: 80px;">Job List</a>
+                           </li>
+                    </ul>
+                    
                 </div>
             </nav> 
              </div>
@@ -78,13 +81,7 @@
         <div class="jumbotron" style="margin-top: 50px">
             <div class="row">
                <div class="col-md-8">
-                        <% foreach(JobHunt.Models.JobDetails data in getWhileLoopDataList2() ) { %>
-
-                                          <h4>Company Name</h4>
-                                               <p><%: data.companyname %></p> 
-                                           <h4>Company Details</h4>
-                                               <p><%: data.companydetails %></p>
-                        <% } //foreach %>
+                      
 
                        <% foreach(JobHunt.Models.JobDetails data in getWhileLoopDataList() ) { %>
                                                               
@@ -102,7 +99,7 @@
                                        <h4>Experience Requirements:</h4>
                                              <p><%: data.reqrmnts %></p>
                                     
-                       <a class="btn btn-warning badge-pill" href="/applyjob.aspx?ApplyId=<%: data.jid %>" style="width: 80px;"> Apply</a> 
+                    
                      
                        <% } //foreach %>
                    </div>
@@ -110,6 +107,7 @@
             </div>
         </div>
         
+                 
 
 
 

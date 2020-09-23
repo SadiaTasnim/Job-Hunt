@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="applicantlist.aspx.cs" Inherits="JobHunt.applicantlist" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="joblist.aspx.cs" Inherits="JobHunt.joblist" %>
+
 
 <!DOCTYPE html>
 
@@ -47,9 +48,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">About Us</a>
-                        </li>    
+                        </li>     
                         
-                         <li class="nav-item">
+                                <li class="nav-item">
                                     <a class="nav-link" href="postajob.aspx" style="width: 80px;">Post a job</a>
                            </li >
                           
@@ -57,9 +58,8 @@
                                 <a class="nav-link" href="joblist.aspx" style="width: 80px;">Job List</a>
                            </li>
 
-
                     </ul>
-                                 
+                            
                 </div>
             </nav> 
             </div>
@@ -68,7 +68,7 @@
         <div class="container-fluid">
             <div class="col-4">
                 <div class="hero-title">
-                    <h1 class="display-5 text-center">Applicants List</h1>
+                    <h1 class="display-5 text-center">Job List</h1>
                 </div>
 
 
@@ -99,29 +99,36 @@
                         </thead>
                         <tbody>
 
-                            <!-- start -->
+
+                            
+                            <% foreach(JobHunt.Models.JobDetails data in getWhileLoopDataList() ) { %>
+                                <tr>
+                                    <td>
+                                   <%-- <%: data.id %>--%>
+                                        <%: data.no %>
+                                    </td>
+                                    <td>
+                                        <%: data.Name %>
+                                    </td>
+                                     <td class="text-right">
+                                     
+                                        <a class="btn btn-warning badge-pill" href="/applicantlist.aspx?jobidforapplicantlist=<%: data.jid %>" style="width: 80px;"> Applicants</a>
+                                        <a class="btn btn-warning badge-pill" href="/JobDescriptionforcompany.aspx?id=<%: data.jid %>" style="width: 80px;"> Details</a>
+                                        <a class="btn btn-warning badge-pill" href="/jobedit.aspx?id=<%: data.jid %>" style="width: 80px;"> Edit</a>
+                                        <a class="btn btn-warning badge-pill" href="/joblist.aspx?deleteId=<%: data.jid %>" style="width: 80px;"> Delete</a>
+
+                                     
+
+                                    </td>
+                                </tr>
+                            <% } //foreach %>
 
 
-                            <% foreach(JobHunt.Models.applicants data in getWhileLoopDataList() ) { %>
-                            <tr>
-                                <th scope="row">   <%: data.no %> </th>
-                                <td> <%: data.applicant_firstname %></td>
-                                
-                                <td class="text-right">
-                                    <%--<button type="button" class="btn btn-warning badge-pill" style="width:80px;">View Details</button>
-                                    <button type="button" class="btn btn-success badge-pill"style="width:80px;">Accept</button>
-                                    <button type="button" class="btn btn-danger badge-pill"style="width:80px;">Delete</button>--%>
-                                    <a class="btn btn-warning badge-pill" href="/ApplicantDetails.aspx?ApplicantId=<%: data.apply_id %>" style="width: 80px;"> Details</a>
-                                    <a class="btn btn-warning badge-pill" href="applicantlist.aspx?acceptId=<%: data.apply_id %>" style="width: 80px;"> Accept</a>
-                                    <a class="btn btn-warning badge-pill" href="applicantlist.aspx?deleteId=<%: data.apply_id %>" style="width: 80px;"> Delete</a>
 
-                                </td>
-                            </tr>
-                              <% } //foreach %>
-                        </tbody>
+                  </tbody>
                     </table>
 
-
+       
 
     
                 </div>
@@ -129,7 +136,10 @@
         </div>
     </div>
 
-    
+
+
+
+
 
 
 
@@ -188,11 +198,20 @@
 
 
 
-    
+
+
+
+
+
+
+
+
+
       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+
 
 </body>
 </html>

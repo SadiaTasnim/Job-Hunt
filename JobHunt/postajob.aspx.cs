@@ -24,17 +24,6 @@ namespace JobHunt
 
         }
 
-        protected void post_a_job_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/postajob.aspx");
-        }
-
-        protected void applicants(object sender, EventArgs e)
-        {
-            Response.Redirect("~/applicantlist.aspx");
-        }
-
-
         protected void postjob(object sender, EventArgs e)
         {
 

@@ -18,7 +18,7 @@ namespace JobHunt.Models
         public String loation { get; set; }
         public String jobdesc { get; set; }
         public String reqrmnts { get; set; }
-
+        public String category { get; set; }
         public String companyname { get; set; }
         public String companydetails { get; set; }
 

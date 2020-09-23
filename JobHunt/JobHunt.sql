@@ -32,6 +32,7 @@ addres varchar(MAX),
 email varchar(50),
 interest varchar(MAX)
 )
+
 create table PostAJob
 (
  job_id int primary key identity(1,1),
@@ -44,6 +45,7 @@ create table PostAJob
  requirment varchar(1000)default null,
  Category varchar(255) default null
 )
+
 
 create table ApplyforJob
 (

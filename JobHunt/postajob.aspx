@@ -46,13 +46,19 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">About Us</a>
                         </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="postajob.aspx" style="width: 80px;">Post a job</a>
+                           </li >
+                           
+                           <li class="nav-item">
+                                <a class="nav-link" href="joblist.aspx" style="width: 80px;">Job List</a>
+                           </li>
+
                         
                     </ul>
                   
 
-                          <a CssClass="btn btn-dark" href="postajob.aspx" style="width: 80px;">Post a Job</a>
-                          <a CssClass="btn btn-dark" href="applicantlist.aspx" style="width: 80px;">Applicants</a>
-                    
 
                    
                 </div>

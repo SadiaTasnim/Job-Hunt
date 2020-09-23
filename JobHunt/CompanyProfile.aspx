@@ -42,31 +42,42 @@
                         <li class="nav-item active">
                             <a class="nav-link" href="HomePage.aspx">Home <span class="sr-only">(current)</span></a>
                         </li>
-                        <%--<li class="nav-item">
-                            <a class="nav-link" href="#">Profile</a>
-                        </li>--%>
+       
                         <li class="nav-item">
                             <a class="nav-link" href="#">Search Candidate</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">About Us</a>
-                        </li>                      
+                        </li>    
+                        
+                                <li class="nav-item">
+                                    <a class="nav-link" href="postajob.aspx" style="width: 80px;">Post a job</a>
+                           </li >
+                         
+                           <li class="nav-item">
+                                <a class="nav-link" href="joblist.aspx" style="width: 80px;">Job List</a>
+                           </li>
+
                     </ul>
-                    <form class="btn-toolbar">
-                        <%--<asp:Button ID="Button1" runat="server" Text="Post A Job" CssClass="btn btn-dark" OnClick="post_a_job_Click" />
-                        <asp:Button ID="Button2" runat="server" Text="Applicants" CssClass="btn btn-dark" OnClick="applicants" />--%>
-
-                       <%-- <button class="btn btn-outline-light my-2 mr-3 my-sm-0" type="submit">Post A Job</button>--%>
-                      <%--  <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Want A Job</button>--%>
-
-
-                        <a CssClass="btn btn-dark" href="postajob.aspx" style="width: 80px;">Post a job</a>
-                        <a CssClass="btn btn-dark" href="applicantlist.aspx" style="width: 80px;">Applicant List</a>
-                    </form>              
+                        
                 </div>
             </nav> 
              </div>
     </form >
+
+       <section class="big-banner">
+        <div class="container-fluid">
+            <div class="col-4">
+                <div class="hero-title">
+                    <h1 class="display-5 text-center">Applicants List</h1>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
 
     <div class="container">
         <div class="jumbotron" style="margin-top: 50px">

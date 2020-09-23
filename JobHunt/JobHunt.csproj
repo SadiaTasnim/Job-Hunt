@@ -116,6 +116,9 @@
     <Content Include="image\user.png" />
     <Content Include="image\wantjob.jpg" />
     <Content Include="JobDescription.aspx" />
+    <Content Include="JobDescriptionforcompany.aspx" />
+    <Content Include="jobedit.aspx" />
+    <Content Include="joblist.aspx" />
     <Content Include="jobseekerprofile.aspx" />
     <Content Include="JobSeekerRegistration.aspx" />
     <Content Include="Jobseeker_login.aspx" />
@@ -191,6 +194,27 @@
     </Compile>
     <Compile Include="JobDescription.aspx.designer.cs">
       <DependentUpon>JobDescription.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JobDescriptionforcompany.aspx.cs">
+      <DependentUpon>JobDescriptionforcompany.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JobDescriptionforcompany.aspx.designer.cs">
+      <DependentUpon>JobDescriptionforcompany.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="jobedit.aspx.cs">
+      <DependentUpon>jobedit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="jobedit.aspx.designer.cs">
+      <DependentUpon>jobedit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="joblist.aspx.cs">
+      <DependentUpon>joblist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="joblist.aspx.designer.cs">
+      <DependentUpon>joblist.aspx</DependentUpon>
     </Compile>
     <Compile Include="jobseekerprofile.aspx.cs">
       <DependentUpon>jobseekerprofile.aspx</DependentUpon>

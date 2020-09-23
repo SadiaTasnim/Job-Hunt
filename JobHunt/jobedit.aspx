@@ -1,10 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="applicantlist.aspx.cs" Inherits="JobHunt.applicantlist" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="jobedit.aspx.cs" Inherits="JobHunt.jobedit" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    
+<head runat="server">
+     
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,8 +12,8 @@
     <title>Job Hunt Website</title>
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/applicantlist.css" rel="stylesheet">
-      <link href="css/fontawesome.min.css" rel="stylesheet">
+    <link href="css/jobdescription.css" rel="stylesheet">
+    <link href="css/fontawesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -28,7 +28,8 @@
 
 </head>
 <body>
-     <form id="form1" runat="server">
+    <form id="form1" >
+      
         <div>
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <a class="navbar-brand" href="#">JobHunt</a>
@@ -41,15 +42,14 @@
                         <li class="nav-item active">
                             <a class="nav-link" href="HomePage.aspx">Home <span class="sr-only">(current)</span></a>
                         </li>
-                  
+       
                         <li class="nav-item">
                             <a class="nav-link" href="#">Search Candidate</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">About Us</a>
                         </li>    
-                        
-                         <li class="nav-item">
+                          <li class="nav-item">
                                     <a class="nav-link" href="postajob.aspx" style="width: 80px;">Post a job</a>
                            </li >
                           
@@ -57,18 +57,18 @@
                                 <a class="nav-link" href="joblist.aspx" style="width: 80px;">Job List</a>
                            </li>
 
-
                     </ul>
-                                 
+                        
                 </div>
             </nav> 
-            </div>
-    </form>
-    <section class="big-banner">
+             </div>
+    </form >
+
+       <section class="big-banner">
         <div class="container-fluid">
             <div class="col-4">
                 <div class="hero-title">
-                    <h1 class="display-5 text-center">Applicants List</h1>
+                    <h1 class="display-5 text-center">Job edit</h1>
                 </div>
 
 
@@ -77,63 +77,79 @@
         </div>
 
     </section>
-    
-
-
-
 
     <div class="container">
         <div class="jumbotron" style="margin-top: 50px">
-            <div class="card">
-                <h5 class="card-header">Recent Applicants</h5>
-                <div class="card-body">
-                    
-                    <table class="table table-hover table-bordered">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th scope="col">No.</th>
-                                <th scope="col">Name</th>
-                               
-                                <th class="text-right">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+            <form runat="server">
 
-                            <!-- start -->
-
-
-                            <% foreach(JobHunt.Models.applicants data in getWhileLoopDataList() ) { %>
-                            <tr>
-                                <th scope="row">   <%: data.no %> </th>
-                                <td> <%: data.applicant_firstname %></td>
-                                
-                                <td class="text-right">
-                                    <%--<button type="button" class="btn btn-warning badge-pill" style="width:80px;">View Details</button>
-                                    <button type="button" class="btn btn-success badge-pill"style="width:80px;">Accept</button>
-                                    <button type="button" class="btn btn-danger badge-pill"style="width:80px;">Delete</button>--%>
-                                    <a class="btn btn-warning badge-pill" href="/ApplicantDetails.aspx?ApplicantId=<%: data.apply_id %>" style="width: 80px;"> Details</a>
-                                    <a class="btn btn-warning badge-pill" href="applicantlist.aspx?acceptId=<%: data.apply_id %>" style="width: 80px;"> Accept</a>
-                                    <a class="btn btn-warning badge-pill" href="applicantlist.aspx?deleteId=<%: data.apply_id %>" style="width: 80px;"> Delete</a>
-
-                                </td>
-                            </tr>
-                              <% } //foreach %>
-                        </tbody>
-                    </table>
-
-
-
-    
+             
+                                           
+               <div class="form-group row" >
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">Job Title </label>
+                          <div class="col-sm-10">
+                            <asp:TextBox ID="TextBox1" runat="server"  class="form-control"  placeholder="" ></asp:TextBox>
+                         
+                        </div>
                 </div>
-            </div>
-        </div>
-    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword3" class="col-sm-2 col-form-label">Email</label>
+                        <div class="col-sm-10">
+                      
+                            <asp:TextBox ID="TextBox2" runat="server"  class="form-control" placeholder="eg.abc@gmail.com"></asp:TextBox>
+                        </div>
+                    </div>
+                <div class="form-group row" >
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">Radios</label>
+                          <div class="col-sm-10">
+                            <asp:TextBox ID="TextBox3" runat="server"  class="form-control"  placeholder="" ></asp:TextBox>
+                         
+                         </div>
+                 </div>
+                <div class="form-group row" >
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">Location</label>
+                          <div class="col-sm-10">
+                            <asp:TextBox ID="TextBox5" runat="server"  class="form-control"  placeholder="" ></asp:TextBox>
+                            
+                         </div>
+                    </div>
+                    <div class="form-group row" >
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">Job Description</label>
+                          <div class="col-sm-10">
+                            <asp:TextBox ID="TextBox7" runat="server"  class="form-control"  placeholder="" ></asp:TextBox>
+                          
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword3" class="col-sm-2 col-form-label">Requirment</label>
+                        <div class="col-sm-10">
+                        
+                            <asp:TextBox ID="TextBox8" runat="server"  class="form-control" placeholder=""></asp:TextBox>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword3" class="col-sm-2 col-form-label">Job Category</label>
+                        <div class="col-sm-10">
+                     
+                            <asp:TextBox ID="TextBox6" runat="server"  class="form-control" placeholder=""></asp:TextBox>
+                        </div>
+                    </div>
 
-    
+                <asp:Button ID="Button3" runat="server" Text="Update" CssClass="btn btn-primary" OnClick="update" />
+                
+
+
+             
+            </form>
+
+             </div>
+         </div>
 
 
 
-    <!--Footer-->
+
+
+
+     <!--Footer-->
             <footer>
                 
                 <div class="footer-top"  style="margin-top: 50px">
@@ -188,11 +204,21 @@
 
 
 
-    
+
+
+
+
+
+
+
+
+
       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
 
+
 </body>
 </html>
+

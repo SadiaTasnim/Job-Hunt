@@ -14,10 +14,14 @@ namespace JobHunt
     {
         private String acceptid = "";
         private String deleteid = "";
+
+        private String jobidforapplicantlist = "";
+
         protected void Page_Load(object sender, EventArgs e)
         {
             this.acceptid = Request.QueryString["acceptId"];
             this.deleteid = Request.QueryString["deleteId"];
+            this.jobidforapplicantlist = Request.QueryString["jobidforapplicantlist"];
             if (Session["RUser"] == null)
             {
                 Response.Redirect("~/Recruiter_login.aspx");
@@ -59,16 +63,7 @@ namespace JobHunt
 
         }
 
-        protected void post_a_job_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/postajob.aspx");
-        }
-
-        protected void applicants(object sender, EventArgs e)
-        {
-            Response.Redirect("~/applicantlist.aspx");
-        }
-
+        
         public List<JobHunt.Models.applicants> getWhileLoopDataList()
         {
             //get company id 
@@ -78,7 +73,7 @@ namespace JobHunt
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon"].ToString());
             con.Open();
 
-            SqlCommand cmd = new SqlCommand("select * from ApplyforJob where comapany_id = "+companyid+"and applystatus=0 ");
+            SqlCommand cmd = new SqlCommand("select * from ApplyforJob where job_id = " +jobidforapplicantlist+"and applystatus=0 ");
             cmd.CommandType = System.Data.CommandType.Text;
             cmd.Connection = con;
             SqlDataReader reader = cmd.ExecuteReader();
