@@ -42,7 +42,7 @@ namespace JobHunt
 
             if (TextBox1.Text == "" || TextBox2.Text == "" || TextBox3.Text == "" || TextBox4.Text == "" || TextBox5.Text == "" || TextBox6.Text == "")
             {
-                // MessageBox.Show("Please fill up all the fields");
+                
                 Response.Write("<script>alert('Please fill up all the fields');</script>");
             }
 

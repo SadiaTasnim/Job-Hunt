@@ -221,7 +221,9 @@
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
     <Compile Include="Models\applicants.cs" />
+    <Compile Include="Models\companyprofile.cs" />
     <Compile Include="Models\JobDetails.cs" />
+    <Compile Include="Models\jobseekerprofile.cs" />
     <Compile Include="morejobs.aspx.cs">
       <DependentUpon>morejobs.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

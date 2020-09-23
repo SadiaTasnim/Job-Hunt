@@ -127,12 +127,12 @@
                 </div>
                
             </div>
-            
+             <a href="/morejobs.aspx" class="stretched-link">show more</a>
         </div>
         
     </div>
 
-     <a href="/morejobs.aspx" class="stretched-link">show more</a>
+    
 
     </form>
  

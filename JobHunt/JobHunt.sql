@@ -1,12 +1,12 @@
 USE JOBHUNT 
+
+
 create table Login
 (
   username varchar(50) primary key,
   password varchar(50),
   role varchar(50),
 )
-
-
 
 create table Company
 (
@@ -20,12 +20,48 @@ company_email nvarchar(50),
 company_details nvarchar(MAX),
 )
 
-Alter table Company 
-Alter Column company_name nvarchar(MAX)
-Drop Table PostAJob
-Drop Table ApplyforJob
-Drop Table Company
+create table jobseekerinfo
+(
+jobseeker_id int primary key identity(1,1),
+jobseeker_name varchar(50),
+username varchar(50),
+gender varchar(50),
+education varchar(MAX),
+contactno int,
+addres varchar(MAX),
+email varchar(50),
+interest varchar(MAX)
+)
+create table PostAJob
+(
+ job_id int primary key identity(1,1),
+ company_id int FOREIGN KEY REFERENCES Company(company_id),
+ job_title varchar (100) default null,
+ email varchar (100) default null,
+ radios varchar(100) default null ,
+ location varchar(500) default null,
+ job_description varchar(1000) default null,
+ requirment varchar(1000)default null,
+ Category varchar(255) default null
+)
 
+create table ApplyforJob
+(
+   apply_id int primary key identity(1,1),
+   comapany_id int FOREIGN KEY REFERENCES Company(company_id),
+   job_id int FOREIGN KEY REFERENCES PostAJob(job_id),
+   jobseeker_id int FOREIGN KEY REFERENCES jobseekerinfo(jobseeker_id),
+   applystatus int ,
+   applicant_firstname nvarchar(MAX) default null,
+   applicant_lastname nvarchar(MAX) default null,
+   email nvarchar(MAX) default null,
+   phoneno nvarchar(MAX) default null,
+   city nvarchar(MAX) default null,
+   addres nvarchar(MAX) default null,
+   qualification nvarchar(MAX) default null,
+   experience nvarchar(MAX) default null,
+   CV varchar(50),
+)
 Insert into Company(company_name,username,contact_person,company_contact,company_address,company_email,company_details)
 values
 ('TMSS ICT Limited','TMSSICT','Manager',880-2-55073530,'West Kazipara, Mirpur-10','tmssict@gmail.com','TMSS is one of the largest Women led NGO and Microfinance Institute in Bangladesh, working towards Poverty Alleviation through an inclusive development approach to improving Health, Education, Microfinance, ICT, Climatically resilient livelihoods, Capacity building and enhance Social justice & Gender equity. It has 5.7 million members since 1980. TMSS delivers its Services throughout the country.'),
@@ -81,18 +117,7 @@ values
 ('RFL Group','RFL','Manager',0178239586809,'PRAN RFL Center, 105 Middle Badda, Dhaka','rflgroup@gmail.com','RFL is one of the fastest growing companies in Bangladesh. Over its 35 years of journey RFL has become synonymous to quality. RFL has a wide range of products which include plastic products, PVC, metal, electronics, wooden furniture, Paint, Stationary, Footwear, Bicycle, Medical device, Real State, Road Construction etc.');
 
 
-create table jobseekerinfo
-(
-jobseeker_id int primary key identity(1,1),
-jobseeker_name varchar(50),
-username varchar(50),
-gender varchar(50),
-education varchar(MAX),
-contactno int,
-addres varchar(MAX),
-email varchar(50),
-interest varchar(MAX)
-)
+
 
 Insert into jobseekerinfo(jobseeker_name,username,gender,education,contactno,addres,email,interest)
 values('Sabiha Sayed','sabiha','Female','B.Sc in Computer Science and Engineering', '01622772436','Mohammadpur, Dhaka','sabiha@gmail.com','Web Development'),
@@ -128,57 +153,27 @@ values('Sabiha Sayed','sabiha','Female','B.Sc in Computer Science and Engineerin
 --('Arafat Uddin','arafat','Male','B.Sc in Computer Science and Engineering', '01622772436','Mohammadpur, Dhaka','sabiha@gmail.com','Web Development'),
 --('Shahriar Moin','moin','Male','B.Sc in Computer Science and Engineering', '01622772436','Mohammadpur, Dhaka','sabiha@gmail.com','Web Development'),
 
-Drop Table Company
-create table PostAJob
-(
- job_id int primary key identity(1,1),
- company_id int FOREIGN KEY REFERENCES Company(company_id),
- job_title varchar (100) default null,
- email varchar (100) default null,
- radios varchar(100) default null ,
- location varchar(500) default null,
- job_description varchar(1000) default null,
- requirment varchar(1000)default null,
- Category varchar(255) default null
-)
 
 
-select * from PostAJob
-select * from Company
 select * from Login
-select * from Question
+select * from Company
 select * from jobseekerinfo
 select * from ApplyforJob
+select * from PostAJob
+
+
+
+
+UPDATE jobseekerinfo
+SET jobseeker_name = '1', username = 's', education = '3' ,contactno = 4 ,addres = 'qqq',email='@gmail',interest='pp'
+WHERE jobseeker_id =20
+
+
 
 select DISTINCT Company.company_name,Company.company_details from Company join PostAJob
 on Company.company_id = PostAJob.company_id 
 where Company.company_id in (select company_id from PostAJob where job_id =1)
 
-create table ApplyforJob
-(
-   apply_id int primary key identity(1,1),
-   comapany_id int FOREIGN KEY REFERENCES Company(company_id),
-   job_id int FOREIGN KEY REFERENCES PostAJob(job_id),
-   jobseeker_id int FOREIGN KEY REFERENCES jobseekerinfo(jobseeker_id),
-   applystatus int ,
-   applicant_firstname nvarchar(MAX) default null,
-   applicant_lastname nvarchar(MAX) default null,
-   email nvarchar(MAX) default null,
-   phoneno nvarchar(MAX) default null,
-   city nvarchar(MAX) default null,
-   addres nvarchar(MAX) default null,
-   qualification nvarchar(MAX) default null,
-   experience nvarchar(MAX) default null,
-   CV varchar(50),
-)
-
-
-
-select * from PostAJob
-select * from Company
-select * from ApplyforJob
-
-select * from Login
 
 
 select * from PostAJob where job_id not in  (select job_id  from ApplyforJob where jobseeker_id = 1 and (applystatus=0 or applystatus=1) ) 

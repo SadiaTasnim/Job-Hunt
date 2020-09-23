@@ -28,7 +28,7 @@
 
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form1" >
       
         <div>
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -55,7 +55,8 @@
                     <form class="btn-toolbar">
 
                       
-                        <asp:Button ID="Button2" runat="server" Text="Want A Job" CssClass="btn btn-dark" OnClick="want_a_job_Click" />
+                         <a CssClass="btn btn-dark" href="wantjob.aspx" style="width: 80px;">Want a job</a>
+                       
                     </form>              
                 </div>
             </nav> 
@@ -64,47 +65,88 @@
 
     <div class="container">
         <div class="jumbotron" style="margin-top: 50px">
-            <form>
-                <h1>Job Seeker Profile</h1>
-                <div class="form-row" style="margin-top:30px">
-                    <div class="form-group col-md-6">
-                        <label for="inputEmail4">Email</label>
-                        <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="inputPassword4">Password</label>
-                        <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-                    </div>
+            <form runat="server">
+
+
+
+                 <% foreach(JobHunt.Models.jobseekerprofile data in getWhileLoopDataList() ) { %>
+                        <div>
+                                           <h4> Name</h4>
+                                               <p><%: data.jobseeker_name %></p> 
+                                           <h4> Username</h4>
+                                               <p><%: data.username %></p>
+                                          <h4>Gender</h4>
+                                               <p><%: data.gender %></p> 
+                                           <h4>Education</h4>
+                                               <p><%: data.education %></p>
+                                           <h4>Contact No</h4>
+                                               <p><%: data.contactno %></p> 
+                                           <h4>Address</h4>
+                                               <p><%: data.addres%></p>
+                                            <h4>Email</h4>
+                                               <p><%: data.email %></p>
+                                           <h4>Interest Field</h4>
+                                               <p><%: data.interest %></p>
+
+                        </div>
+
+                <% } //foreach %>
+
+
+
+                <div class="form-group row" >
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
+                          <div class="col-sm-10">
+                            <asp:TextBox ID="TextBox1" runat="server"  class="form-control"  placeholder="eg.Sadia Tasnim" ></asp:TextBox>
+                         
+                        </div>
                 </div>
-                <div class="form-group">
-                    <label for="inputAddress">Address</label>
-                    <input type="text" class="form-control" id="inputAddress" placeholder="Address">
-                </div>
-                <div class="form-group">
-                    <label for="inputAddress2">Educational Institute</label>
-                    <input type="text" class="form-control" id="inputAddress2" placeholder="education">
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="inputContact">Contact No</label>
-                        <input type="text" class="form-control" id="inputContact">
+                    <div class="form-group row">
+                        <label for="inputPassword3" class="col-sm-2 col-form-label">User Name</label>
+                        <div class="col-sm-10">
+                      
+                            <asp:TextBox ID="TextBox2" runat="server"  class="form-control" placeholder=""></asp:TextBox>
+                        </div>
                     </div>
-                  
-                    <div class="form-group col-md-6">
-                        <label for="inputDetails">Gender</label>
-                        <input type="text" class="form-control" id="inputGender">
+                <div class="form-group row" >
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">Education</label>
+                          <div class="col-sm-10">
+                            <asp:TextBox ID="TextBox3" runat="server"  class="form-control"  placeholder="" ></asp:TextBox>
+                         
+                         </div>
+                 </div>
+                <div class="form-group row" >
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">Contact No</label>
+                          <div class="col-sm-10">
+                            <asp:TextBox ID="TextBox4" runat="server"  class="form-control"  placeholder="eg.01XXXXXXXXX" ></asp:TextBox>
+                            
+                         </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="gridCheck">
-                        <label class="form-check-label" for="gridCheck">
-                            Check me out
-                        </label>
+                    <div class="form-group row" >
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">Address</label>
+                          <div class="col-sm-10">
+                            <asp:TextBox ID="TextBox5" runat="server"  class="form-control"  placeholder="" ></asp:TextBox>
+                          
+                        </div>
                     </div>
-                </div>
-                <button type="submit" class="btn btn-primary">Update</button>
-                <button type="submit" class="btn btn-primary">Back</button>
+                    <div class="form-group row">
+                        <label for="inputPassword3" class="col-sm-2 col-form-label">Email</label>
+                        <div class="col-sm-10">
+                        
+                            <asp:TextBox ID="TextBox6" runat="server"  class="form-control" placeholder="eg.abc@gmail.com"></asp:TextBox>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword3" class="col-sm-2 col-form-label">Interest Field</label>
+                        <div class="col-sm-10">
+                     
+                            <asp:TextBox ID="TextBox7" runat="server"  class="form-control" placeholder=""></asp:TextBox>
+                        </div>
+                    </div>
+
+
+
+                    <asp:Button ID="Button3" runat="server" Text="Update" CssClass="btn btn-primary" OnClick="update" />
             </form>
 
              </div>
