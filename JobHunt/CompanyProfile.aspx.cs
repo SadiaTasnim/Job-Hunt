@@ -74,7 +74,7 @@ namespace JobHunt
 
 
 
-            if (TextBox1.Text == "" || TextBox2.Text == "" || TextBox3.Text == "" || TextBox5.Text == "" || TextBox7.Text == "" || TextBox8.Text == "" || TextBox6.Text == "")
+            if (TextBox1.Text == ""  || TextBox3.Text == "" || TextBox5.Text == "" || TextBox7.Text == "" || TextBox8.Text == "" || TextBox6.Text == "")
             {
 
                 Response.Write("<script>alert('Please fill up all the fields');</script>");
@@ -97,7 +97,7 @@ namespace JobHunt
 
                     //System.Diagnostics.Debug.WriteLine(comapany_id);
 
-                    SqlCommand cmd1 = new SqlCommand("  UPDATE Company SET company_name = '" + TextBox1.Text + "', username = '" + TextBox2.Text + "', contact_person = '" + TextBox3.Text + "', company_contact = "+TextBox5.Text+", company_address = '" + TextBox7.Text + "', company_email = '" + TextBox8.Text + "', company_details = '" + TextBox6.Text+"' WHERE company_id =  "+comapany_id , con);
+                    SqlCommand cmd1 = new SqlCommand("  UPDATE Company SET company_name = '" + TextBox1.Text + "', contact_person = '" + TextBox3.Text + "', company_contact = "+TextBox5.Text+", company_address = '" + TextBox7.Text + "', company_email = '" + TextBox8.Text + "', company_details = '" + TextBox6.Text+"' WHERE company_id =  "+comapany_id , con);
 
                     cmd1.ExecuteNonQuery();
                     con.Close();

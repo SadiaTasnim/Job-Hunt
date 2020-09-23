@@ -50,14 +50,15 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">About Us</a>
-                        </li>                      
+                        </li>   
+                        <li class="nav-item">
+                              <a class="nav-link" href="wantjob.aspx" style="width: 80px;">Want a job</a>
+                        </li>  
+                        <li class="nav-item">
+                              <a class="nav-link" href="appliedjobs.aspx" style="width: 80px;">Applied Jobs</a>
+                        </li>
                     </ul>
-                    <form class="btn-toolbar">
-
-                      
-                         <a CssClass="btn btn-dark" href="wantjob.aspx" style="width: 80px;">Want a job</a>
-                       
-                    </form>              
+                                
                 </div>
             </nav> 
              </div>
@@ -100,14 +101,7 @@
                             <asp:TextBox ID="TextBox1" runat="server"  class="form-control"  placeholder="eg.Sadia Tasnim" ></asp:TextBox>
                          
                         </div>
-                </div>
-                    <div class="form-group row">
-                        <label for="inputPassword3" class="col-sm-2 col-form-label">User Name</label>
-                        <div class="col-sm-10">
-                      
-                            <asp:TextBox ID="TextBox2" runat="server"  class="form-control" placeholder=""></asp:TextBox>
-                        </div>
-                    </div>
+              </div>
                 <div class="form-group row" >
                         <label for="inputEmail3" class="col-sm-2 col-form-label">Education</label>
                           <div class="col-sm-10">

@@ -11,7 +11,7 @@ namespace JobHunt
 {
 
 
-    public partial class morejobs
+    public partial class categoryjobs
     {
 
         /// <summary>

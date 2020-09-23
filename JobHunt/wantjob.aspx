@@ -21,10 +21,25 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+
+    <%--newadded--%>
+     <%--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css" />--%>
+    
        <!-- Including the bootstrap CDN -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+   
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.jquery.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.css">
 
 </head>
 <body>
@@ -47,13 +62,15 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">About Us</a>
-                        </li>                      
+                        </li>       
+                        <li class="nav-item">
+                              <a class="nav-link" href="wantjob.aspx" style="width: 80px;">Want a job</a>
+                        </li>  
+                        <li class="nav-item">
+                              <a class="nav-link" href="appliedjobs.aspx" style="width: 80px;">Applied Jobs</a>
+                        </li>
                     </ul>
-                    </div>
-
-                 
-                        <asp:Button ID="Button2" runat="server" Text="Want A Job" CssClass="btn btn-dark" OnClick="want_a_job_Click" />
-                </div>
+                  </div>
             </nav> 
             </div>
     <section class="big-banner">
@@ -81,8 +98,12 @@
                 <div class="card-body">
                     
                     <div class="form-group pull-right">
-                        <input type="text" class="search form-control" placeholder="Search here..." />
+                      <%--  <input type="text" class="search form-control" placeholder="Search here..." />--%>
+                  <%--      <asp:DropDownList ID="Dropdownlist1" runat="server" DataSourceID="SqlDataSource1" DataTextField="job_title" DataValueField="job_title" ></asp:DropDownList>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:JOBHUNTConnectionString8 %>" SelectCommand="SELECT [job_title] FROM [PostAJob]"></asp:SqlDataSource>
+                         <script>$('#<%=Dropdownlist1.ClientID %>').select();</script>--%>
                     </div>
+                   
                     <table class="table table-hover table-bordered">
                         <thead class="thead-dark">
                             <tr>
@@ -127,12 +148,14 @@
                 </div>
                
             </div>
-             <a href="/morejobs.aspx" class="stretched-link">show more</a>
+            
         </div>
-        
+         <div>
+                 <a href="/morejobs.aspx" class="">show more</a>
+          </div>
     </div>
 
-    
+           
 
     </form>
  
@@ -141,7 +164,7 @@
 
 
 
-     </form>
+
 
     
 

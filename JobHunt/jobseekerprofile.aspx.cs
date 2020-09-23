@@ -87,7 +87,7 @@ namespace JobHunt
 
 
 
-            if (TextBox1.Text == "" || TextBox2.Text == "" || TextBox3.Text == "" || TextBox4.Text == "" || TextBox5.Text == "" || TextBox6.Text == "" || TextBox7.Text == "")
+            if (TextBox1.Text == "" || TextBox3.Text == "" || TextBox4.Text == "" || TextBox5.Text == "" || TextBox6.Text == "" || TextBox7.Text == "")
             {
 
                 Response.Write("<script>alert('Please fill up all the fields');</script>");
@@ -103,7 +103,7 @@ namespace JobHunt
                     SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon"].ToString());
                     con.Open();
 
-                    SqlCommand cmd1 = new SqlCommand(" UPDATE jobseekerinfo SET jobseeker_name = '"+TextBox1.Text+ "', username = '" + TextBox2.Text + "', education = '" + TextBox3.Text + "', contactno = "+TextBox4.Text+", addres = '" + TextBox5.Text + "', email = '" + TextBox6.Text + "', interest = '" + TextBox7.Text + "' WHERE jobseeker_id =  "+jobseekerid, con);
+                    SqlCommand cmd1 = new SqlCommand(" UPDATE jobseekerinfo SET jobseeker_name = '"+TextBox1.Text+ "', education = '" + TextBox3.Text + "', contactno = "+TextBox4.Text+", addres = '" + TextBox5.Text + "', email = '" + TextBox6.Text + "', interest = '" + TextBox7.Text + "' WHERE jobseeker_id =  "+jobseekerid, con);
 
                     cmd1.ExecuteNonQuery();
                     con.Close();

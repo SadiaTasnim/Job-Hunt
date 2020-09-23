@@ -71,7 +71,9 @@
     <Content Include="Admin_user.aspx" />
     <Content Include="ApplicantDetails.aspx" />
     <Content Include="applicantlist.aspx" />
+    <Content Include="appliedjobs.aspx" />
     <Content Include="applyjob.aspx" />
+    <Content Include="categoryjobs.aspx" />
     <Content Include="CompanyProfile.aspx" />
     <Content Include="css\applicantlist.css" />
     <Content Include="css\applyjob.css" />
@@ -164,12 +166,26 @@
     <Compile Include="applicantlist.aspx.designer.cs">
       <DependentUpon>applicantlist.aspx</DependentUpon>
     </Compile>
+    <Compile Include="appliedjobs.aspx.cs">
+      <DependentUpon>appliedjobs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="appliedjobs.aspx.designer.cs">
+      <DependentUpon>appliedjobs.aspx</DependentUpon>
+    </Compile>
     <Compile Include="applyjob.aspx.cs">
       <DependentUpon>applyjob.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="applyjob.aspx.designer.cs">
       <DependentUpon>applyjob.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="categoryjobs.aspx.cs">
+      <DependentUpon>categoryjobs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="categoryjobs.aspx.designer.cs">
+      <DependentUpon>categoryjobs.aspx</DependentUpon>
     </Compile>
     <Compile Include="CompanyProfile.aspx.cs">
       <DependentUpon>CompanyProfile.aspx</DependentUpon>

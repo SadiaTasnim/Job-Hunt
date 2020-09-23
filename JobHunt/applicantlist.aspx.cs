@@ -29,6 +29,8 @@ namespace JobHunt
             }
 
             string companyname = Session["RUser"].ToString();
+
+            
             //get company id 
             int companyid = Convert.ToInt32(Session["Cid"].ToString());
             //get accept id 
@@ -68,12 +70,12 @@ namespace JobHunt
         {
             //get company id 
             int companyid = Convert.ToInt32(Session["Cid"].ToString());
-
+            int jobidforapplicantlist = Convert.ToInt32(this.jobidforapplicantlist);
             int no = 1;
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon"].ToString());
             con.Open();
 
-            SqlCommand cmd = new SqlCommand("select * from ApplyforJob where job_id = " +jobidforapplicantlist+"and applystatus=0 ");
+            SqlCommand cmd = new SqlCommand("select * from ApplyforJob where job_id = " +jobidforapplicantlist+" and applystatus=0 ");
             cmd.CommandType = System.Data.CommandType.Text;
             cmd.Connection = con;
             SqlDataReader reader = cmd.ExecuteReader();

@@ -47,14 +47,15 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">About Us</a>
                         </li>
+                        <li class="nav-item">
+                              <a class="nav-link" href="wantjob.aspx" style="width: 80px;">Want a job</a>
+                        </li>  
+                        <li class="nav-item">
+                              <a class="nav-link" href="appliedjobs.aspx" style="width: 80px;">Applied Jobs</a>
+                        </li>
                         
                     </ul>
                   
-
-                      <%--  <asp:Button ID="Button1" runat="server" Text="Post A Job" CssClass="btn btn-dark" />--%>
-                     <%--   <asp:Button ID="Button2" runat="server" Text="Want A Job" CssClass="btn btn-dark" OnClick="want_a_job_Click" />--%>
-                        <a CssClass="btn btn-dark" href="wantjob.aspx" style="width: 80px;">Want a job</a>
-                     
 
                    
                 </div>

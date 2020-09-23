@@ -1,30 +1,45 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="applicantlist.aspx.cs" Inherits="JobHunt.applicantlist" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="categoryjobs.aspx.cs" Inherits="JobHunt.categoryjobs" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Job Hunt Website</title>
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/applicantlist.css" rel="stylesheet">
-      <link href="css/fontawesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/wantjob.css" rel="stylesheet"/>
+      <link href="css/fontawesome.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+
+    <%--newadded--%>
+     <%--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css" />--%>
+    
        <!-- Including the bootstrap CDN -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+   
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.jquery.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.css">
 
 </head>
 <body>
@@ -41,34 +56,28 @@
                         <li class="nav-item active">
                             <a class="nav-link" href="HomePage.aspx">Home <span class="sr-only">(current)</span></a>
                         </li>
-                  
+                      
                         <li class="nav-item">
                             <a class="nav-link" href="#">Search Candidate</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">About Us</a>
-                        </li>    
-                        
-                         <li class="nav-item">
-                                    <a class="nav-link" href="postajob.aspx" style="width: 80px;">Post a job</a>
-                           </li >
-                          
-                           <li class="nav-item">
-                                <a class="nav-link" href="joblist.aspx" style="width: 80px;">Job List</a>
-                           </li>
-
-
+                        </li>       
+                        <li class="nav-item">
+                              <a class="nav-link" href="wantjob.aspx" style="width: 80px;">Want a job</a>
+                        </li>  
+                        <li class="nav-item">
+                              <a class="nav-link" href="appliedjobs.aspx" style="width: 80px;">Applied Jobs</a>
+                        </li>
                     </ul>
-                                 
-                </div>
+                  </div>
             </nav> 
             </div>
-    </form>
     <section class="big-banner">
         <div class="container-fluid">
             <div class="col-4">
                 <div class="hero-title">
-                    <h1 class="display-5 text-center">Applicants List</h1>
+                    <h1 class="display-5 text-center">Want a Job</h1>
                 </div>
 
 
@@ -85,47 +94,75 @@
     <div class="container">
         <div class="jumbotron" style="margin-top: 50px">
             <div class="card">
-                <h5 class="card-header">Recent Applicants</h5>
+                <h5 class="card-header">Top Searched Jobs</h5>
                 <div class="card-body">
                     
+             
+                   
                     <table class="table table-hover table-bordered">
                         <thead class="thead-dark">
                             <tr>
                                 <th scope="col">No.</th>
-                                <th scope="col">Name</th>
+                                <th scope="col">Job Title</th>
+
                                
                                 <th class="text-right">Action</th>
                             </tr>
                         </thead>
                         <tbody>
+                            
 
-                            <!-- start -->
+                                <!-- start -->
 
 
-                            <% foreach(JobHunt.Models.applicants data in getWhileLoopDataList() ) { %>
-                            <tr>
-                                <th scope="row">   <%: data.no %> </th>
-                                <td> <%: data.applicant_firstname %></td>
-                                
-                                <td class="text-right">
-                                   
-                                    <a class="btn btn-warning badge-pill" href="/ApplicantDetails.aspx?ApplicantId=<%: data.apply_id %>" style="width: 80px;"> Details</a>
-                                    <a class="btn btn-warning badge-pill" href="applicantlist.aspx?acceptId=<%: data.apply_id %>" style="width: 80px;"> Accept</a>
-                                    <a class="btn btn-warning badge-pill" href="applicantlist.aspx?deleteId=<%: data.apply_id %>" style="width: 80px;"> Delete</a>
+                            <% foreach(JobHunt.Models.JobDetails data in getWhileLoopDataList() ) { %>
+                                <tr>
+                                    <td>
+                                   <%-- <%: data.id %>--%>
+                                        <%: data.no %>
+                                    </td>
+                                    <td>
+                                        <%: data.Name %>
+                                    </td>
+                                     <td class="text-right">
+                                       
+                                        <a class="btn btn-warning badge-pill" href="/JobDescription.aspx?id=<%: data.jid %>" style="width: 80px;"> Details</a>
+                                        <a class="btn btn-warning badge-pill" href="/applyjob.aspx?ApplyId=<%: data.jid %>" style="width: 80px;"> Apply</a>
 
-                                </td>
-                            </tr>
-                              <% } //foreach %>
+                                     
+
+                                    </td>
+                                </tr>
+                            <% } //foreach %>
+
+
+                            
+                      
+
                         </tbody>
-                    </table>
 
-
-
+                    </table>  
+                    
+                   
     
                 </div>
+               
             </div>
+            
         </div>
+         <div>
+         
+          </div>
     </div>
+
+           
+
+    </form>
+ 
+
+    
+
+
 
     
 
@@ -194,3 +231,4 @@
 
 </body>
 </html>
+

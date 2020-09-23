@@ -46,6 +46,7 @@ create table PostAJob
  Category varchar(255) default null
 )
 
+delete from ApplyforJob where  job_id=7 and jobseeker_id=20
 
 create table ApplyforJob
 (
@@ -64,6 +65,18 @@ create table ApplyforJob
    experience nvarchar(MAX) default null,
    CV varchar(50),
 )
+select * from Login
+select * from Company
+select * from jobseekerinfo
+select * from ApplyforJob
+select * from PostAJob
+
+select * from PostAJob where Category LIKE '%rs%'
+select Distinct Category from PostAJob
+
+
+select * from PostAJob where job_id in (select  job_id from ApplyforJob where jobseeker_id=20 and applystatus=1)
+
 Insert into Company(company_name,username,contact_person,company_contact,company_address,company_email,company_details)
 values
 ('TMSS ICT Limited','TMSSICT','Manager',880-2-55073530,'West Kazipara, Mirpur-10','tmssict@gmail.com','TMSS is one of the largest Women led NGO and Microfinance Institute in Bangladesh, working towards Poverty Alleviation through an inclusive development approach to improving Health, Education, Microfinance, ICT, Climatically resilient livelihoods, Capacity building and enhance Social justice & Gender equity. It has 5.7 million members since 1980. TMSS delivers its Services throughout the country.'),
@@ -157,11 +170,43 @@ values('Sabiha Sayed','sabiha','Female','B.Sc in Computer Science and Engineerin
 
 
 
-select * from Login
-select * from Company
-select * from jobseekerinfo
-select * from ApplyforJob
-select * from PostAJob
+Insert into PostAJob(company_id,job_title,email,radios,location,Category,job_description,requirment)
+values(1,'Software Engineer','tmssict@gmail.com','Full-time','West Kazipara, Mirpur-10','Telecommunication','Design, develop & maintain complex web applications, Follow the best practices of software development (Test driven development, continuous integration, Scrum, refactoring, code standard)','Bachelor of Science (BSc) in CSE , Skills Required: .Net, PHP, Python, Ruby on Rails'),
+(2,'Deputy Manager','arafathyeasir0@gmail.com','Full-time','Dorgha Moholla, Sylhet','Telecommunication','To configure and maintain Networking & Hardware Devices.To Implement and Maintain Farewell for Network Security.','B.Sc in CSE from any reputed University.'),
+(3,'Senior Software Engineer','advancedit@gmail.com','Full-time','Mirpur-13,Dhaka','Telecommunication','Maintain standard software development practice,Build reusable code and libraries for future use.','B.Sc in CSE from any reputed University.Any other Professional Qualification will be given preference.'),
+(4,'Senior PHP Developer','itmagnet@gmail.com','Full-time','New DOHS, Mohakhali','Telecommunication','Assume a high level of ownership of all work developed by members of the team.Develop new user-facing features in large scale application.','B.Sc in CSE from any reputed University.The applicants should have experience in the following area(s): Angular, CodeIgniter, Laravel, PHP, ReactJS, WordPress plugins development, wordpress theme development, YII'),
+(5,'Software Specialist (PHP)','dreamonline@gmail.com','Part-time','House# 7, Road# 2/C, Block# J, Dhaka, Dhaka 1212','Telecommunication','Develop complete web application with the possible combination of following web technologies: PHP, Laravel, CodeIgniter, Node.js, Vue.js, Angular JS, React, HTML, CSS, SQL.','Bachelor of Science (BSc) in CSE .Strong comprehension of ICT system and technologies.'),
+(6,'Assistant ICT Officer','netcoden@gmail.com','Full-time','2/2, Pallabi (Main Road), Mirpur 11.5','Telecommunication','Provide ICT helpdesk services to the ICT authorized users.Diagnosis and resolution of hardware, software or connectivity problems.','Bachelor of Science (BSc) in CSE'),
+(7,'Front End Developer','netcoden@gmail.com','Internship','23, Gulshan Avenue, Bay Tower. Dhaka. Gulshan - 1','Telecommunication','Implement interactive and responsive Web Design.Must have Experience to build a Complex interface from scratch.','Bachelor of Science (BSc) in CSE . Skills Required: BOOTSTRAP 3 4, HTML5 & CSS3, JavaScript, PSD to HTML'),
+(8,'Intern - SQA','digicontechnologies@gmail.com','Internship','242 Tejgaon I/A, Gulshan Link Road, Dhaka.','Telecommunication','Knowledge about load testing, performance testing using j-meter.Develop & Implementation the robust automated test script.','Bachelor of Science (BSc) in CSE'),
+(9,'Senior Full Stack JavaScript Developer','trustinfotech@gmail.com','Full-time','Road #3, House 28/B, Level 4, OLD DOHS Banani Dhaka','Telecommunication','Able to transform Wireframes or PSD Designs into functional Web Applications using MERN or MEAN stack (React, Node.js, Mongo, Express, Vue).Advanced knowledge in BOTH Frontend and Backend web development using JS','Bachelor of Science (BSc) in CSE . Skills Required: AngularJS, Full Stack Development, NodeJS, ReactJS, Web Application Development'),
+(10,'Junior Software Developer (PHP Laravel & Vue.js)','softifybd@gmail.com','Part-time','Hazi Motaleb Plaza, S.S. Shah Road, Bandar, Narayanganj','Telecommunication','Strong foundation required in Object Oriented Programming (OOP) Analysis and Design concepts. Need to develop the back-end of the web app we develop through Laravel.','Bachelor of Science (BSc) in CSE'),
+(11,'Transaction Service Officer','bracbank@gmail.com','Full-time','Gulshan-1, Dhaka','Finance Management','Cash payment and receive, Fund transfer.','MBA in Finance'),
+(12,'Marketing Officer (Branch In charge)','ipdcbd@gmail.com','Part-time','Hosna Center (4th Floor), 106 Gulshan Avenue, Dhaka - 1212','Finance Management','Opening new account such as saving account,DPS, FDR, etc.','Bachelor degree in Finance'),
+(13,'Associate Manager','meridianfinancebd@gmail.com','Full-time','52 Gulshan Avenue, Gulshan 1, Dhaka - 1212, Bangladesh','Finance Management','Assist in the formulation of targets for individuals and teams;','Bachelor degree in Finance'),
+(14,'Head of Retail Lending','iidfc@gmail.com','Full-time','Banani-11, Dhaka','Finance Management','Develop and execute the agreed business strategy to grow lending portfolio.','Bachelor degree in Finance'),
+(15,'Territory Marketing Officer','dhakainsurancebd@gmail.com','Full-time','Dhaka Insurance Bhaban,Head Office:71, Purana Palton Line,Dhaka-1000','Marketing & Sales','Handling dealer and retailers issues and solving them promptly.Working towards the increase of sales.','Bachelor degree in Marketing'),
+(16,'Divisional Sales Manager','midas@gmail.com','Part-time','MIDAS Centre (6th floor), House # 05, Road # 16 (New), 27 (Old), Dhanmondi, Dhaka-1209','Marketing & Sales','Achieving total level value & volume target and ensuring optimum product distribution & visibility.Performing primary sales order management and verifying secondary sales.','Bachelor degree in Marketing'),
+(17,'Regional Sales Manager ','fcslbd@gmail.com','Full-time','Somobay Bhaban (9th floor), 9/D Motijheel- C/A, Dhaka-1000','Marketing & Sales','Market visit, Audit, Client hunt & create Marketing opportunity.Responsible in increase in sales from existing customer and develop new customer.','Bachelor degree in Marketing'),
+(18,'Lecturer','registrar@pu.edu.bd','Full-time','8, Progoti Sharani, Block-J, Road- 9, Baridhara, Dhaka-1212','Writing','To conduct both face to face and online classes. To perform any other work assigned by the management.','Master Degree in the relevant subject.'),
+(19,'Assistant Professor','hr@bacbd.org','Full-time','Dhanmondi, Dhaka','Writing','To perform any other work assigned by the management. To counsel students and to work in a team environment.','Master Degree in the relevant subject.'),
+(20,'Counselor','ois@gmail.com','Full-time','House 34, Road 27 (old), Dhanmondi R/A','Writing','To counsel students and to work in a team environment.To attend departmental and general meetings.','Master Degree in the relevant subject.'),
+(21,'Restaurant Cashier','mtof@gmail.com','Full-time','Mehedi Food Court, 300 feet Purbachal Express Highway, Dhaka','Restuarant','Manage transactions with customers using cash registers.','Bachelor degree in any discipline'),
+(22,'Receptionist','hotelelaf@gmail.com','Part-time','Coxs Bazar','Restuarant','Greet incoming guests and welcome them to the hotel. confirm reservations, explain hotel amenities, give directions to rooms, and produce room keys.','Bachelor degree in any discipline'),
+(23,'Restaurant Supervisor','sarahresort@gmail.com','Full-time','Notun Bazar, Boro Beraid, Dhaka-1212, Bangladesh','Restuarant','To supervise & control all staff (waiter, helper, cleaner)','Bachelor degree in any discipline'),
+(24,'Supply Chain Executive','jobbclgroup@gmail.com','Full-time','Dhaka','Business','Smart, self-motivated, hardworking & ability to work under pressure.','BBA'),
+(25,'Trainee Officer',' info@bengal.com.bd','Part-time','75 Gulshan Avenue, Gulshan-1, Dhaka','Business','Candidates will be responsible for day to days activities of Commercial department.','BBA'),
+(26,'Senior Executive','probashipalligroup@gmail.com','Full-time','Ahmed Tower (Level-12), Banani, Kamal Ataturk Road, Dhaka-1213.','Business','Monitor preventive maintenance program to assure cost effective maintenance','BBA'),
+(31,'Supervisor - Hospitality Management','alharamain@gmail.com','Full-time','House#12, Road#19, Sector#07, Uttara, Dhaka-1230','Health & Care','To delegate duties and responsibilities to the subordinates in the department.','Bachelor degree in Pharmacy'),
+(32,'Medical Technologist (Lab)','purplealgo@gmail.com','Part-time','Baily Road, Dhaka','Health & Care','Execute and analysis Biochemical, Hormonal, Immunological, Histopathology, Virology, Hematological and Serological assay with interpretation.','Bachelor degree in Pharmacy'),
+(33,'Sr. Medical Officer','orion@orion-group.net','Internship','Orion House, 153-154 Tejgaon Industrial Area Dhaka-1208, Bangladesh','Health & Care','looking for bright, energetic, dynamic, and enthusiastic doctors for its Secondary Level Eye Hospitals','Bachelor degree in Pharmacy'),
+(36,'Media and Communication Officer','info@banglainsider.com','Full-time','House:43, Level:5, Road: 16(new), 27 (old), Dhanmondi, Dhaka-1209','Multimedia','Develop and design of bulletin, reports and different publications; Social Media Content development, uploading and editing;','Bachelor Mass Communications'),
+(37,'Intern (Content Writer cum Digital Marketing )','mssbd@gmail.com','Part-time','SEL Centre (3rd Floor) 29, West Panthapath, Dhaka-1205','Multimedia','Creating, developing, and editing of original content for activities related to online marketing','Bachelor Mass Communications'),
+(38,'Head of Brand & Communication','bjit@gmail.com','Internship','House # 7, Road # 2C, Block # J, Baridhara, Dhaka-1212','Multimedia','Brand strategy, including the setting of style guides, brand guidelines, brand vision and value proposition for short as well as long term.','Bachelor Mass Communications');
+
+--(15,'Software Engineer','iidfc@gmail.com','Full-time','Banani-11, Dhaka','Marketing & Sales','','Bachelor degree in Marketing'),
+--(16,'Software Engineer','iidfc@gmail.com','Part-time','Banani-11, Dhaka','Marketing & Sales','','Bachelor degree in Marketing'),
+--(16,'Software Engineer','iidfc@gmail.com','Full-time','Banani-11, Dhaka','Marketing & Sales','','Bachelor degree in Marketing');
 
 
 

@@ -46,15 +46,7 @@ namespace JobHunt
 
 
         }
-        protected void post_a_job_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/postajob.aspx");
-        }
-
-        protected void want_a_job_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/wantjob.aspx");
-        }
+       
 
         protected void jobapply(object sender, EventArgs e)
         {
@@ -73,38 +65,6 @@ namespace JobHunt
 
 
 
-        //public string getWhileLoopData()
-        //{
-        //    string htmlStr = "";
-
-        //    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon"].ToString());
-        //    con.Open();
-
-        //    SqlCommand cmd = new SqlCommand("SELECT * FROM PostAJob  ");
-        //    cmd.CommandType = System.Data.CommandType.Text;
-        //    cmd.Connection = con;
-        //    SqlDataReader reader = cmd.ExecuteReader();
-        //    while (reader.Read())
-        //    {
-
-        //        int id = reader.GetInt32(0);
-        //        string Name = reader.GetString(2);
-
-        //        htmlStr += "<tr>";
-        //        htmlStr += "<td>" + id + "</td><td>" + Name + "</td>";
-        //        htmlStr += "<td class='text-right'>" +
-        //                        "<button class='btn btn-warning badge-pill'  style='width: 80px;' OnClick='showdetails'>Details</button>" +
-        //                        /*
-        //                                <asp:Button ID = "Button4" runat="server"  class="btn btn-warning badge-pill"  Text="Apply" style="width: 80px;" OnClick="jobapply"  />*/
-
-        //                        "</td>";
-        //        htmlStr += "</tr>";
-
-
-        //    }
-        //    con.Close();
-        //    return htmlStr;
-        //}
         public List<JobHunt.Models.JobDetails> getWhileLoopDataList()
         {
             int no = 1;

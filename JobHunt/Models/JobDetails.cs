@@ -21,6 +21,7 @@ namespace JobHunt.Models
         public String category { get; set; }
         public String companyname { get; set; }
         public String companydetails { get; set; }
+        public int cantapply { get; set; }
 
     }
 }

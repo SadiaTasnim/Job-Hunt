@@ -85,14 +85,60 @@
         </div>
     <!--Grid Part-->
 
-
+    <% int a = 0;%>
     <div class="container">
         <div class="jumbotron" style="margin-top: 50px">
         <h1 class="card-title text-center" style="margin-bottom: 20px">Browse Job By Category</h1>
 
             <div class="card-deck">
-                
-                <div class="card">
+
+               <% foreach(JobHunt.Models.JobDetails data in getWhileLoopDataList() ) { %>
+
+               
+                <div class="col-md-4" >
+
+               
+                  <div class="card">
+                    
+                    <div class="card-body text-center">
+                        <a  class="stretched-link" href="/categoryjobs.aspx?category=<%: data.category %>"></a>
+
+                        <%if (a == 0)
+                            { %>
+
+                        <i class="fa fa-desktop fa-4x center" style="color: blue;"  ></i>     <%  a = 1;
+                           }
+                          else if (a == 1)
+                            {%>
+
+                         <i class="fa fa-medkit fa-4x center" style="color: red;" aria-hidden="true"></i> 
+                        <% a = 2;
+                         } else if (a == 2) { %>
+
+
+                         <i class="fa fa-money fa-4x center" style="color: blue;" aria-hidden="true"></i>  
+                        
+                        <% a = 3;
+                           } else { %>
+                             <i class="fa fa-pencil fa-4x center" style="color: blue;" aria-hidden="true"></i> 
+                         <%a = 0;
+                             } %>
+
+                        <p></p>
+                        <p class="card-text text-center"> <%: data.category %></p>
+                    
+                    </div>
+                </div>
+
+
+             </div>
+
+              <% } //foreach %>
+
+ </div>
+ </div>
+        </div>
+<%--                <div class="card">
                     
                     <div class="card-body text-center">
                         <a href="#" class="stretched-link"></a>
@@ -175,7 +221,7 @@
             </div>
 
         </div>
-    </div>
+    </div>--%>
    <!---  <div class="container">   -->
     <!--    <div class="jumbotron" style="margin-top: 50px">  -->
 
