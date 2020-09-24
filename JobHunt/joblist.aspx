@@ -43,20 +43,22 @@
                             <a class="nav-link" href="HomePage.aspx">Home <span class="sr-only">(current)</span></a>
                         </li>
                   
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Search Candidate</a>
-                        </li>
+                     
                         <li class="nav-item">
                             <a class="nav-link" href="#">About Us</a>
                         </li>     
                         
                                 <li class="nav-item">
-                                    <a class="nav-link" href="postajob.aspx" style="width: 80px;">Post a job</a>
+                                    <a class="nav-link" href="postajob.aspx" >Post a job</a>
                            </li >
                           
                            <li class="nav-item">
-                                <a class="nav-link" href="joblist.aspx" style="width: 80px;">Job List</a>
+                                <a class="nav-link" href="joblist.aspx" >Job List</a>
                            </li>
+
+                           <li class="nav-item">
+                           <a class="nav-link" href="/Recruiter_login.aspx?LogoutId=<%:1 %>">Logout</a>
+                        </li>
 
                     </ul>
                             
@@ -112,10 +114,10 @@
                                     </td>
                                      <td class="text-right">
                                      
-                                        <a class="btn btn-warning badge-pill" href="/applicantlist.aspx?jobidforapplicantlist=<%: data.jid %>" style="width: 80px;"> Applicants</a>
+                                        <a class="btn btn-info badge-pill" href="/applicantlist.aspx?jobidforapplicantlist=<%: data.jid %>" > Applicants</a>
                                         <a class="btn btn-warning badge-pill" href="/JobDescriptionforcompany.aspx?id=<%: data.jid %>" style="width: 80px;"> Details</a>
-                                        <a class="btn btn-warning badge-pill" href="/jobedit.aspx?id=<%: data.jid %>" style="width: 80px;"> Edit</a>
-                                        <a class="btn btn-warning badge-pill" href="/joblist.aspx?deleteId=<%: data.jid %>" style="width: 80px;"> Delete</a>
+                                        <a class="btn btn-success badge-pill" href="/jobedit.aspx?id=<%: data.jid %>" style="width: 80px;"> Edit</a>
+                                        <a class="btn btn-danger badge-pill" href="/joblist.aspx?deleteId=<%: data.jid %>" style="width: 80px;"> Delete</a>
 
                                      
 

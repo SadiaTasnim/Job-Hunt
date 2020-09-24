@@ -45,17 +45,18 @@
                         <%--<li class="nav-item">
                             <a class="nav-link" href="#">Profile</a>
                         </li>--%>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Search Candidate</a>
-                        </li>
+                      
                         <li class="nav-item">
                             <a class="nav-link" href="#">About Us</a>
                         </li>   
                         <li class="nav-item">
-                              <a class="nav-link" href="wantjob.aspx" style="width: 80px;">Want a job</a>
+                              <a class="nav-link" href="wantjob.aspx" >Want a job</a>
                         </li>  
                         <li class="nav-item">
-                              <a class="nav-link" href="appliedjobs.aspx" style="width: 80px;">Applied Jobs</a>
+                              <a class="nav-link" href="appliedjobs.aspx">Applied Jobs</a>
+                        </li>
+                          <li class="nav-item">
+                           <a class="nav-link" href="/Jobseeker_login.aspx?LogoutId=<%:1 %>">Logout</a>
                         </li>
                     </ul>
                                 
@@ -72,28 +73,33 @@
 
                  <% foreach(JobHunt.Models.jobseekerprofile data in getWhileLoopDataList() ) { %>
                         <div>
-                                           <h4> Name</h4>
+                                           <h4 style="color:black"> Name</h4>
                                                <p><%: data.jobseeker_name %></p> 
-                                           <h4> Username</h4>
+                                           <h4 style="color:black"> Username</h4>
                                                <p><%: data.username %></p>
-                                          <h4>Gender</h4>
+                                          <h4 style="color:black">Gender</h4>
                                                <p><%: data.gender %></p> 
-                                           <h4>Education</h4>
+                                           <h4 style="color:black">Education</h4>
                                                <p><%: data.education %></p>
-                                           <h4>Contact No</h4>
+                                           <h4 style="color:black">Contact No</h4>
                                                <p><%: data.contactno %></p> 
-                                           <h4>Address</h4>
+                                           <h4 style="color:black">Address</h4>
                                                <p><%: data.addres%></p>
-                                            <h4>Email</h4>
+                                            <h4 style="color:black">Email</h4>
                                                <p><%: data.email %></p>
-                                           <h4>Interest Field</h4>
+                                           <h4 style="color:black">Interest Field</h4>
                                                <p><%: data.interest %></p>
 
                         </div>
 
                 <% } //foreach %>
 
+                 <br \ />
 
+                <div><h3 style="color:black ; text-align:center" >Update profile</h3></div>
+                              
+                
+                 <br \ />
 
                 <div class="form-group row" >
                         <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>

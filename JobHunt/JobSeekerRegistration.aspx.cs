@@ -21,21 +21,7 @@ namespace JobHunt
             }
         }
 
-    //    public void que()
-       // {
-          //  SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon"].ToString());
-         //   con.Open();
-         //   SqlDataAdapter adp = new SqlDataAdapter("select * from Question", con);
-         //   DataSet ds = new DataSet();
-        //    adp.Fill(ds);
-        //    DropDownList4.DataSource = ds.Tables[0];
-         //   DropDownList4.DataTextField = "question";
-       //     DropDownList4.DataValueField = "que_id";
-      //      DropDownList4.DataBind();
-     //       DropDownList4.Items.Insert(0, new ListItem("select", "0"));
-     //       con.Close();
-    //    }
-
+   
         protected void Button5_Click(object sender, EventArgs e)
         {
   

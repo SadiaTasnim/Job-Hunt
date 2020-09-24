@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Net;
 
 namespace JobHunt
 {
@@ -105,7 +106,18 @@ namespace JobHunt
             return data1;
         }
 
-
-
+        protected void bttnpdf_Click(object sender, EventArgs e)
+        {
+            string FilePath = Server.MapPath("~/UploadedCV/Resume.pdf");
+            WebClient User = new WebClient();
+            Byte[] FileBuffer = User.DownloadData(FilePath);
+            if (FileBuffer != null)
+            {
+                Response.ContentType = "application/pdf";
+                Response.AddHeader("content-length", FileBuffer.Length.ToString());
+                Response.BinaryWrite(FileBuffer);
+            }
         }
+
+    }
 }

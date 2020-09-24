@@ -40,20 +40,21 @@
                             <a class="nav-link" href="HomePage.aspx">Home <span class="sr-only">(current)</span></a>
                         </li>
                      
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Search Candidate</a>
-                        </li>
+                      
                         <li class="nav-item">
                             <a class="nav-link" href="#">About Us</a>
                         </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="postajob.aspx" style="width: 80px;">Post a job</a>
+                                    <a class="nav-link" href="postajob.aspx">Post A Job</a>
                            </li >
                            
                            <li class="nav-item">
-                                <a class="nav-link" href="joblist.aspx" style="width: 80px;">Job List</a>
+                                <a class="nav-link" href="joblist.aspx">Job List</a>
                            </li>
+                          <li class="nav-item">
+                           <a class="nav-link" href="/Recruiter_login.aspx?LogoutId=<%:1 %>">Logout</a>
+                        </li>
 
                         
                     </ul>
@@ -104,9 +105,9 @@
                     </div>
                     <fieldset class="form-group">
                    
-                            <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
+                            <legend class="col-form-label col-sm-2 pt-0" style="align-content:center">Job Status</legend>
                             <div class="col-sm-10">
-                           
+                
 
                              <asp:RadioButtonList ID="rblMeasurementSystem" runat="server">
                                 <asp:ListItem Text="Full Time" Value="Full Time" />

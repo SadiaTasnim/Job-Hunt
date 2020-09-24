@@ -48,9 +48,9 @@
                         <%--<li class="nav-item">
                             <a class="nav-link" href="#">Profile</a>
                         </li>--%>
-                        <li class="nav-item">
+                <!--        <li class="nav-item">
                             <a class="nav-link" href="#">Search Candidate</a>
-                        </li>
+                        </li>  -->
                         <li class="nav-item">
                             <a class="nav-link" href="#">About Us</a>
                         </li>
@@ -64,9 +64,14 @@
                         
                         -->    
                   
-                <asp:Button runat="server" Text="Post A Job" CssClass="btn btn-dark" OnClick="Unnamed1_Click" />
-                    <%--<asp:Button runat="server" Text="Want A Job" CssClass="btn btn-dark" OnClick="Unnamed2_Click" />--%>
-                   <asp:Button ID="Button1" runat="server" Text="Want a Job" CssClass="btn btn-dark" OnClick="Unnamed2_Click" />
+            <!--    <asp:Button runat="server" Text="Post A Job" CssClass="btn btn-dark" OnClick="Unnamed1_Click" />  -->
+                    <asp:Button runat="server" Text="Post A Job" style="padding-bottom: 8px;" CssClass="btn btn-dark btn-outline-light my-2 mr-3 my-sm-0" OnClick="Unnamed1_Click" />
+               
+                   
+                   
+                   <%--<asp:Button runat="server" Text="Want A Job" CssClass="btn btn-dark" OnClick="Unnamed2_Click" />--%>
+                   <!-- <asp:Button ID="Button1" runat="server" Text="Want a Job" CssClass="btn btn-dark" OnClick="Unnamed2_Click" />   -->
+                   <asp:Button ID="Button2" runat="server" Text="Want a Job" CssClass="btn btn-dark btn-outline-light my-2 mr-3 my-sm-0" OnClick="Unnamed2_Click" />
            +
 
 

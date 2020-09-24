@@ -43,20 +43,21 @@
                             <a class="nav-link" href="HomePage.aspx">Home <span class="sr-only">(current)</span></a>
                         </li>
        
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Search Candidate</a>
-                        </li>
+                       
                         <li class="nav-item">
                             <a class="nav-link" href="#">About Us</a>
                         </li>    
                         
                                 <li class="nav-item">
-                                    <a class="nav-link" href="postajob.aspx" style="width: 80px;">Post a job</a>
+                                    <a class="nav-link" href="postajob.aspx">Post A Job</a>
                            </li >
                          
                            <li class="nav-item">
-                                <a class="nav-link" href="joblist.aspx" style="width: 80px;">Job List</a>
+                                <a class="nav-link" href="joblist.aspx">Job List</a>
                            </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="/Recruiter_login.aspx?LogoutId=<%:1 %>">Logout</a>
+                        </li>
 
                     </ul>
                         
@@ -85,25 +86,30 @@
 
               <% foreach(JobHunt.Models.companyprofile data in getWhileLoopDataList() ) { %>
                         <div>
-                                           <h4>Company Name</h4>
+                                           <h4 style="color:black">Company Name</h4>
                                                <p><%: data.company_name %></p> 
-                                           <h4>Company Username</h4>
+                                           <h4 style="color:black"> Company Username</h4>
                                                <p><%: data.username %></p>
-                                          <h4>Contact Person</h4>
+                                          <h4 style="color:black">Contact Person</h4>
                                                <p><%: data.contact_person %></p> 
-                                           <h4>Contact No.</h4>
+                                           <h4 style="color:black">Contact No.</h4>
                                                <p><%: data.company_contact %></p>
-                                           <h4>Address</h4>
+                                           <h4 style="color:black">Address</h4>
                                                <p><%: data.company_address %></p> 
-                                           <h4>Email</h4>
+                                           <h4 style="color:black">Email</h4>
                                                <p><%: data.company_email %></p>
-                                            <h4>Details</h4>
+                                            <h4 style="color:black">Details</h4>
                                                <p><%: data.company_details %></p>
 
                         </div>
 
                 <% } //foreach %>
-                                           
+                <br \ />
+
+                <div><h3 style="color:black ; text-align:center" >Update profile</h3></div>
+                              
+                
+                 <br \ />
                <div class="form-group row" >
                         <label for="inputEmail3" class="col-sm-2 col-form-label">Company Name</label>
                           <div class="col-sm-10">

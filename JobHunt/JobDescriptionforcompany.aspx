@@ -42,19 +42,20 @@
                             <a class="nav-link" href="HomePage.aspx">Home <span class="sr-only">(current)</span></a>
                         </li>
               
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Search Candidate</a>
-                        </li>
+                        
                         <li class="nav-item">
                             <a class="nav-link" href="#">About Us</a>
                         </li>    
                            <li class="nav-item">
-                                    <a class="nav-link" href="postajob.aspx" style="width: 80px;">Post a job</a>
+                                    <a class="nav-link" href="postajob.aspx" >Post a job</a>
                            </li >
                        
                            <li class="nav-item">
-                                <a class="nav-link" href="joblist.aspx" style="width: 80px;">Job List</a>
+                                <a class="nav-link" href="joblist.aspx" >Job List</a>
                            </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="/Recruiter_login.aspx?LogoutId=<%:1 %>">Logout</a>
+                        </li>
                     </ul>
                     
                 </div>

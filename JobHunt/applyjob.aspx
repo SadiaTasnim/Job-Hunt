@@ -41,17 +41,18 @@
                         <%--<li class="nav-item">
                             <a class="nav-link" href="#">Profile</a>
                         </li>--%>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Search Candidate</a>
-                        </li>
+                        
                         <li class="nav-item">
                             <a class="nav-link" href="#">About Us</a>
                         </li>
                         <li class="nav-item">
-                              <a class="nav-link" href="wantjob.aspx" style="width: 80px;">Want a job</a>
+                              <a class="nav-link" href="wantjob.aspx">Want A Job</a>
                         </li>  
                         <li class="nav-item">
-                              <a class="nav-link" href="appliedjobs.aspx" style="width: 80px;">Applied Jobs</a>
+                              <a class="nav-link" href="appliedjobs.aspx" >Applied Jobs</a>
+                        </li>
+                        <li class="nav-item">
+                             <a class="nav-link" href="/Jobseeker_login.aspx?LogoutId=<%:1 %>">Logout</a>
                         </li>
                         
                     </ul>
@@ -179,7 +180,7 @@
                  
                     <%--<button class="btn btn-primary" type="submit">Submit form</button>--%>
                     <asp:Button ID="Button1" runat="server" Text="Submit" CssClass="btn btn-primary" OnClick="postjob"  />
-                    <asp:Button ID="Button2" runat="server" Text="Cancel" CssClass="btn btn-primary" OnClick="back" />
+                    <asp:Button ID="Button2" runat="server" Text="Cancel" CssClass="btn btn-danger" OnClick="back" />
                     <%--<button class="btn btn-danger" type="submit">Back</button>--%>
                 </form>
 

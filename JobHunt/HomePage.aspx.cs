@@ -22,7 +22,7 @@ namespace JobHunt
             int no = 1;
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon"].ToString());
             con.Open();
-           
+
 
             SqlCommand cmd = new SqlCommand("select Distinct Category from PostAJob");
 
@@ -33,11 +33,11 @@ namespace JobHunt
             List<JobHunt.Models.JobDetails> data = new List<Models.JobDetails>();
             while (reader.Read())
             {
-               
+
                 string category = reader.GetString(0);
                 JobHunt.Models.JobDetails jobDetails = new Models.JobDetails();
-                jobDetails.category =category;
-                
+                jobDetails.category = category;
+
 
                 data.Add(jobDetails);
                 no++;

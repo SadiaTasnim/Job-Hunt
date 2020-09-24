@@ -1,5 +1,4 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="categoryjobs.aspx.cs" Inherits="JobHunt.categoryjobs" %>
-
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -57,17 +56,18 @@
                             <a class="nav-link" href="HomePage.aspx">Home <span class="sr-only">(current)</span></a>
                         </li>
                       
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Search Candidate</a>
-                        </li>
+                        
                         <li class="nav-item">
                             <a class="nav-link" href="#">About Us</a>
                         </li>       
                         <li class="nav-item">
-                              <a class="nav-link" href="wantjob.aspx" style="width: 80px;">Want a job</a>
+                              <a class="nav-link" href="wantjob.aspx" >Want a job</a>
                         </li>  
                         <li class="nav-item">
-                              <a class="nav-link" href="appliedjobs.aspx" style="width: 80px;">Applied Jobs</a>
+                              <a class="nav-link" href="appliedjobs.aspx" >Applied Jobs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="HomePage.aspx">Logout</a>
                         </li>
                     </ul>
                   </div>
@@ -127,7 +127,7 @@
                                      <td class="text-right">
                                        
                                         <a class="btn btn-warning badge-pill" href="/JobDescription.aspx?id=<%: data.jid %>" style="width: 80px;"> Details</a>
-                                        <a class="btn btn-warning badge-pill" href="/applyjob.aspx?ApplyId=<%: data.jid %>" style="width: 80px;"> Apply</a>
+                                        <a class="btn btn-success badge-pill" href="/applyjob.aspx?ApplyId=<%: data.jid %>" style="width: 80px;"> Apply</a>
 
                                      
 

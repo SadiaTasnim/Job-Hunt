@@ -21,7 +21,7 @@
                        <div class="row">
                            <div class="col">
                                <center>
-                                   <h4 text-color:"dark">Recruiter Login</h4>
+                                   <h4 text-color:"dark">Company Login</h4>
                                </center>
                            </div>
                        </div>

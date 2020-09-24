@@ -67,7 +67,7 @@
             <div class="card-body">
                 <h5 class="text-center">Company</h5>
                 <p class="card-text">You will find suitable candidates here</p>
-                 <a href="Recruiter_login.aspx" class="btn btn-primary">Go To Company Profile</a>
+                 <a href="CompanyProfile.aspx" class="btn btn-primary">Go To Company Profile</a>
               
             </div>
         </div>
@@ -76,7 +76,7 @@
             <div class="card-body">
                 <h5 class="text-center">Job Seeker</h5>
                 <p class="card-text">You will find your desired jobs here</p>
-                 <a href="Jobseeker_login.aspx" class="btn btn-primary">Go To Job Seeker Profile</a>
+                 <a href="jobseekerprofile.aspx" class="btn btn-primary">Go To Job Seeker Profile</a>
                
             </div>
         </div>
@@ -84,6 +84,7 @@
             </div>
         </div>
     <!--Grid Part-->
+        <!--Grid Part-->
 
     <% int a = 0;%>
     <div class="container">
@@ -111,12 +112,12 @@
                           else if (a == 1)
                             {%>
 
-                         <i class="fa fa-medkit fa-4x center" style="color: red;" aria-hidden="true"></i> 
+                         <i class="fa fa-users fa-4x center" style="color: red;" aria-hidden="true"></i> 
                         <% a = 2;
                          } else if (a == 2) { %>
 
 
-                         <i class="fa fa-money fa-4x center" style="color: blue;" aria-hidden="true"></i>  
+                         <i class="fa fa-users fa-4x center" style="color: blue;" aria-hidden="true"></i>  
                         
                         <% a = 3;
                            } else { %>
@@ -138,92 +139,6 @@
  </div>
  </div>
         </div>
-<%--                <div class="card">
-                    
-                    <div class="card-body text-center">
-                        <a href="#" class="stretched-link"></a>
-                        <i class="fa fa-chart-line fa-4x center" style="color: blue;"  ></i>
-                        <p class="card-text text-center">Marketing & Sales</p>
-                        <p class="card-text text-center"><small class="text-muted">90 Jobs</small></p>
-                    </div>
-                </div>
-                <div class="card">
-                   
-                    <div class="card-body">
-                      <i class="fa fa-medkit fa-4x center" style="color: red;" aria-hidden="true"></i>
-                        <p class="card-text">Health & Care</p>
-                        <p class="card-text"><small class="text-muted">30 Jobs</small></p>
-                    </div>
-                </div>
-                <div class="card">
-                    
-                    <div class="card-body">
-                       <i class="fa fa-desktop fa-4x center" style="color: blue;" aria-hidden="true"></i>
-                        <p class="card-text">Telecommunication</p>
-                        <p class="card-text"><small class="text-muted">180 Jobs</small></p>
-                    </div>
-                </div>
-
-
-            </div>
-            <div class="card-deck" style="margin-top: 20px">
-                <div class="card">
-                    
-                    <div class="card-body">
-                        <i class="fa fa-industry fa-4x center" style="color: blue;" aria-hidden="true"></i>
-                        <p class="card-text">Business</p>
-                        <p class="card-text"><small class="text-muted">30 Jobs</small></p>
-                    </div>
-                </div>
-                <div class="card">
-                   
-                    <div class="card-body">
-                        <i class="fa fa-pencil fa-4x center"  style="color: blue;" aria-hidden="true"></i>
-                        <p class="card-text">Writing</p>
-                        <p class="card-text"><small class="text-muted">9 Jobs</small></p>
-                    </div>
-                </div>
-                <div class="card">
-                    
-                    <div class="card-body">
-                        <i class="fa fa-cutlery fa-4x center" style="color: red;" aria-hidden="true"></i>
-                        <p class="card-text">Restuarant</p>
-                        <p class="card-text"><small class="text-muted">15 Jobs</small></p>
-                    </div>
-                </div>
-            </div>
-
-             <div class="card-deck" style="margin-top: 20px">
-                <div class="card">
-                    
-                    <div class="card-body">
-                        <i class="fa fa-money fa-4x center" style="color: blue;" aria-hidden="true"></i>
-                        <p class="card-text">Finance Management</p>
-                        <p class="card-text"><small class="text-muted">65 Jobs</small></p>
-                    </div>
-                </div>
-                <div class="card">
-                   
-                    <div class="card-body">
-                        <i class="fa fa-medium fa-4x center" style="color: blue;" aria-hidden="true"></i>
-                        <p class="card-text">Multimedia</p>
-                        <p class="card-text"><small class="text-muted">55 Jobs</small></p>
-                    </div>
-                </div>
-                <div class="card">
-                    
-                    <div class="card-body">
-                        <i class="fa fa-users fa-4x center" style="color: blue;" aria-hidden="true"></i>
-                        <p class="card-text">Customer Service</p>
-                        <p class="card-text"><small class="text-muted">48 Jobs</small></p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>--%>
-   <!---  <div class="container">   -->
-    <!--    <div class="jumbotron" style="margin-top: 50px">  -->
 
     <section id="team">
         <div class="container my-3 py-5 text-center">

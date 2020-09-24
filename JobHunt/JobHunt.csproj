@@ -132,7 +132,6 @@
     <Content Include="postajob.aspx" />
     <Content Include="Recruiter_login.aspx" />
     <Content Include="Recruiter_registration.aspx" />
-    <Content Include="Rucruiter_profile.aspx" />
     <Content Include="w3.css" />
     <Content Include="Web.config" />
     <Content Include="wantjob.aspx" />
@@ -292,13 +291,6 @@
     </Compile>
     <Compile Include="Recruiter_registration.aspx.designer.cs">
       <DependentUpon>Recruiter_registration.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Rucruiter_profile.aspx.cs">
-      <DependentUpon>Rucruiter_profile.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Rucruiter_profile.aspx.designer.cs">
-      <DependentUpon>Rucruiter_profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Session.cs" />
     <Compile Include="wantjob.aspx.cs">

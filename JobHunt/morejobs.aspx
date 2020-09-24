@@ -42,19 +42,20 @@
                             <a class="nav-link" href="HomePage.aspx">Home <span class="sr-only">(current)</span></a>
                         </li>
                       
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Search Candidate</a>
-                        </li>
+                     
                         <li class="nav-item">
                             <a class="nav-link" href="#">About Us</a>
                         </li>   
                         
                             
                          <li class="nav-item">
-                              <a class="nav-link" href="wantjob.aspx" style="width: 80px;">Want a job</a>
+                              <a class="nav-link" href="wantjob.aspx" >Want a job</a>
                         </li>  
                         <li class="nav-item">
-                              <a class="nav-link" href="appliedjobs.aspx" style="width: 80px;">Applied Jobs</a>
+                              <a class="nav-link" href="appliedjobs.aspx" >Applied Jobs</a>
+                        </li>
+                           <li class="nav-item">
+                             <a class="nav-link" href="/Jobseeker_login.aspx?LogoutId=<%:1 %>">Logout</a>
                         </li>
                     </ul>
                    
@@ -84,9 +85,9 @@
                 <h5 class="card-header">Top Searched Jobs</h5>
                 <div class="card-body">
                     
-                    <div class="form-group pull-right">
+      <!--              <div class="form-group pull-right">
                         <input type="text" class="search form-control" placeholder="Search here..." />
-                    </div>
+                    </div>   -->
                     <table class="table table-hover table-bordered">
                         <thead class="thead-dark">
                             <tr>
@@ -111,8 +112,8 @@
                                     </td>
                                      <td class="text-right">
                                         
-                                        <a class="btn btn-warning badge-pill" href="/JobDescription.aspx?id=<%: data.jid %>" style="width: 80px;"> Details</a>
-                                        <a class="btn btn-warning badge-pill" href="/applyjob.aspx?ApplyId=<%: data.jid %>" style="width: 80px;"> Apply</a>
+                                        <a class="btn btn-warning badge-pill" href="/JobDescription.aspx?id=<%: data.jid %>" > Details</a>
+                                        <a class="btn btn-success badge-pill" href="/applyjob.aspx?ApplyId=<%: data.jid %>" > Apply</a>
 
                                      
 

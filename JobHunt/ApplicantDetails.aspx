@@ -42,19 +42,20 @@
                             <a class="nav-link" href="HomePage.aspx">Home <span class="sr-only">(current)</span></a>
                         </li>
               
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Search Candidate</a>
-                        </li>
+                      
                         <li class="nav-item">
                             <a class="nav-link" href="#">About Us</a>
                         </li>   
                           <li class="nav-item">
-                                    <a class="nav-link" href="postajob.aspx" style="width: 80px;">Post a job</a>
+                                    <a class="nav-link" href="postajob.aspx" >Post a job</span></a>
                            </li >
                           
                            <li class="nav-item">
-                                <a class="nav-link" href="joblist.aspx" style="width: 80px;">Job List</a>
+                                <a class="nav-link" href="joblist.aspx">Job List</a>
                            </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="HomePage.aspx">Logout</a>
+                        </li>
                     </ul>
                             
                 </div>
@@ -102,7 +103,7 @@
                                              <p><%: data.email %></p>
                                        <h4>Phone Number : </h4>
                                             <p><%: data.phoneno %></p>
-                                      <h4>City</h4>
+                                      <h4>City:</h4>
                                             <p><%: data.city %></p>
                                        <h4>Address : </h4>
                                              <p><%: data.addres %></p>
@@ -110,9 +111,13 @@
                                              <p><%: data.qualification %></p>
                                        <h4>Experience : </h4>
                                              <p><%: data.experience %></p>
+                                       <h4>CV (PDF Format):</h4>  
+                                        <div>  
+        <asp:Button ID="bttnpdf"  runat="server" Text="Click for open PDF" Font-Bold="True" OnClick="bttnpdf_Click" />  </div>
+                   <br \ />
                                     
-                            <a class="btn btn-warning badge-pill" href="/applicantlist.aspx?acceptId=<%: data.apply_id %>" style="width: 80px;"> Accept</a>
-                           <a class="btn btn-warning badge-pill" href="/applicantlist.aspx?deleteId=<%: data.apply_id %>" style="width: 80px;"> Delete</a>
+                            <a class="btn btn-success badge-pill" href="/applicantlist.aspx?acceptId=<%: data.apply_id %>" style="width: 80px;"> Accept</a>
+                           <a class="btn btn-danger badge-pill" href="/applicantlist.aspx?deleteId=<%: data.apply_id %>" style="width: 80px;"> Delete</a>
                      
                        <% } //foreach %>
                    </div>

@@ -12,13 +12,21 @@ namespace JobHunt
 {
     public partial class Jobseeker_login : System.Web.UI.Page
     {
+        private String LogoutId = "";
         SqlConnection con = null;
         SqlCommand cmd = null;
         SqlDataReader dr = null;
         SqlDataAdapter adp = null;
         protected void Page_Load(object sender, EventArgs e)
         {
+            this.LogoutId = Request.QueryString["LogoutId"];
 
+            int Logout = Convert.ToInt32(this.LogoutId);
+            if (this.LogoutId != null && this.LogoutId != "")
+            {
+
+                Session.Abandon();
+            }
         }
 
         protected void Button2_Click(object sender, EventArgs e)

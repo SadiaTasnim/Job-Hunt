@@ -8,6 +8,7 @@ create table Login
   role varchar(50),
 )
 
+
 create table Company
 (
 company_id int  primary key identity(1,1),
@@ -46,7 +47,6 @@ create table PostAJob
  Category varchar(255) default null
 )
 
-delete from ApplyforJob where  job_id=7 and jobseeker_id=20
 
 create table ApplyforJob
 (
@@ -65,17 +65,16 @@ create table ApplyforJob
    experience nvarchar(MAX) default null,
    CV varchar(50),
 )
+
 select * from Login
+select * from PostAJob
 select * from Company
 select * from jobseekerinfo
 select * from ApplyforJob
-select * from PostAJob
-
-select * from PostAJob where Category LIKE '%rs%'
-select Distinct Category from PostAJob
 
 
-select * from PostAJob where job_id in (select  job_id from ApplyforJob where jobseeker_id=20 and applystatus=1)
+
+
 
 Insert into Company(company_name,username,contact_person,company_contact,company_address,company_email,company_details)
 values
@@ -91,12 +90,10 @@ values
 ('TrustInfo Tech','TrustInfoTech','Executive Manager',01839573922,' Road #3, House 28/B, Level 4, OLD DOHS Banani Dhaka','trustinfotech@gmail.com','We will prepare the project according to your individual needs.You can count on us to choose the most appropriate template for yours project.'),
 ('Softifybd Limited','Softifybd','Manager',01739264934,'Hazi Motaleb Plaza, S.S. Shah Road, Bandar, Narayanganj','softifybd@gmail.com ','Softifybd Limited is a regular and custom software development company in Bangladesh and specializes in made-to-order software on a variety of technology platforms. We feel proud on our ability to create the perfect custom program that will optimize the workflow of your business and company.'),
 
-
 ('BRAC Bank Limited','BRACBank','Manager',01739837390,'Gulshan-1, Dhaka','bracbank@gmail.com','BRAC Bank Limited, pioneer in SME Banking, delivers a full array of banking services to individuals as well as business entities. With a network of 184 Branches, over 460 ATMs, 448 SME Unit Offices and 229 remittance delivery points, the Bank has unmatched reach to provide a comprehensive range of solutions to serve millions.'),
 ('IPDC Finance Limited','IPDCFinance','Manager',01729749304,'Hosna Center (4th Floor), 106 Gulshan Avenue, Dhaka - 1212','ipdcbd@gmail.com','IPDC Finance Ltd. is the first private sector financial institution of Bangladesh established in 1981. IPDC is credited with being the most innovative financial institution of the country partnering in many landmark projects as well as introducing many financial products which were first of its kind in the country. Today, IPDC is a diversified financial institution catering to Corporate, SMEs and Retail market segments.'),
 ('Meridian Finance & Investment Limited','MeridianFinanceInvestment','Manager',017394629044,'Silver Tower (Level-6), 52 Gulshan Avenue, Gulshan 1, Dhaka - 1212, Bangladesh','meridianfinancebd@gmail.com','Meridian Finance & Investment Ltd, the newly established Non-Banking financial institution'),
 ('Industrial and Infrastructure Development Finance Company Limited (IIDFC)','IIDFC','Manager',01729625804,'Banani-11, Dhaka','iidfc@gmail.com','Industrial and Infrastructure Development Finance Company Limited (IIDFC) is the newly established Non-Banking financial institution'),
-
 
 ('Dhaka Insurance Limited','Xfactory','bb',58316139-43,'Dhaka Insurance Bhaban,Head Office:71, Purana Palton Line,Dhaka-1000','dhakainsurancebd@gmail.com','The company has professionally qualified and experienced Executives, Officers, and Staff and is sufficiently equipped to deal with the technicalities of general insurance business of various nature so as to cater for the growing needs of the clientele.'),
 ('MIDAS Investment Limited','MIDAS','Manager',01729474030,'MIDAS Centre (6th floor), House # 05, Road # 16 (New), 27 (Old), Dhanmondi, Dhaka-1209','midas@gmail.com','MIDAS Investment Limited, a newly licensed full-fledged Merchant Banker and Portfolio Manager is going to appoint Human Resources in the following positions and invites applications from the deserving, honest and eligible candidates.'),
@@ -134,10 +131,11 @@ values
 
 
 
+
 Insert into jobseekerinfo(jobseeker_name,username,gender,education,contactno,addres,email,interest)
 values('Sabiha Sayed','sabiha','Female','B.Sc in Computer Science and Engineering', '01622772436','Mohammadpur, Dhaka','sabiha@gmail.com','Web Development'),
-('Sadia Tasnim','sabiha','Female','B.Sc in Computer Science and Engineering', '0166494739','Mohammadpur, Dhaka','sadia@gmail.com','Mobile Application Development'),
-('Tasmiyah Tisha','sabiha','Female','B.Sc in Computer Science and Engineering', '016747234','Khilgaon, Dhaka','tisha@gmail.com',' PHP Framework'),
+('Sadia Tasnim','sadia','Female','B.Sc in Computer Science and Engineering', '0166494739','Mohammadpur, Dhaka','sadia@gmail.com','Mobile Application Development'),
+('Tasmiyah Tisha','tisha','Female','B.Sc in Computer Science and Engineering', '016747234','Khilgaon, Dhaka','tisha@gmail.com',' PHP Framework'),
 ('Sadia Afrin','afrin','Female','B.Sc in Computer Science and Engineering', '0187678948','Shantinagar, Dhaka','afrin@gmail.com','Database Management'),
 ('Jaharatuz Warifa','warifa','Female','B.Sc in Computer Science and Engineering', '0167474794','Bashabo, Dhaka','warifa@gmail.com','Wordpress Theme'),
 ('Fatema Rahman','fatema','Female','B.Sc in Computer Science and Engineering', '0189784789','Dhanmondi, Dhaka','fatema@gmail.com','Competitve Programming'),
@@ -202,35 +200,43 @@ values(1,'Software Engineer','tmssict@gmail.com','Full-time','West Kazipara, Mir
 (33,'Sr. Medical Officer','orion@orion-group.net','Internship','Orion House, 153-154 Tejgaon Industrial Area Dhaka-1208, Bangladesh','Health & Care','looking for bright, energetic, dynamic, and enthusiastic doctors for its Secondary Level Eye Hospitals','Bachelor degree in Pharmacy'),
 (36,'Media and Communication Officer','info@banglainsider.com','Full-time','House:43, Level:5, Road: 16(new), 27 (old), Dhanmondi, Dhaka-1209','Multimedia','Develop and design of bulletin, reports and different publications; Social Media Content development, uploading and editing;','Bachelor Mass Communications'),
 (37,'Intern (Content Writer cum Digital Marketing )','mssbd@gmail.com','Part-time','SEL Centre (3rd Floor) 29, West Panthapath, Dhaka-1205','Multimedia','Creating, developing, and editing of original content for activities related to online marketing','Bachelor Mass Communications'),
-(38,'Head of Brand & Communication','bjit@gmail.com','Internship','House # 7, Road # 2C, Block # J, Baridhara, Dhaka-1212','Multimedia','Brand strategy, including the setting of style guides, brand guidelines, brand vision and value proposition for short as well as long term.','Bachelor Mass Communications');
+(38,'Head of Brand & Communication','bjit@gmail.com','Internship','House # 7, Road # 2C, Block # J, Baridhara, Dhaka-1212','Multimedia','Brand strategy, including the setting of style guides, brand guidelines, brand vision and value proposition for short as well as long term.','Bachelor Mass Communications'),
 
---(15,'Software Engineer','iidfc@gmail.com','Full-time','Banani-11, Dhaka','Marketing & Sales','','Bachelor degree in Marketing'),
---(16,'Software Engineer','iidfc@gmail.com','Part-time','Banani-11, Dhaka','Marketing & Sales','','Bachelor degree in Marketing'),
---(16,'Software Engineer','iidfc@gmail.com','Full-time','Banani-11, Dhaka','Marketing & Sales','','Bachelor degree in Marketing');
+(4,'Executive, HR','itmagnet@gmail.com','Full-time','New DOHS, Mohakhali','Marketing & Sales','Maintain and continuously update the Human Resources Management Information System (HRMIS).','Bachelor in HR from any reputed University.'),
+(4,'General Manager','itmagnet@gmail.com','Full-time','New DOHS, Mohakhali','Business','Assume a high level of ownership of all work developed by members of the team.Develop new user-facing features in large scale application.','Bachelor in Business from any reputed University.'),
+(4,'Accounts Manager','itmagnet@gmail.com','Part-time','New DOHS, Mohakhali','Finance Management','Assume a high level of ownership of all work developed by members of the team.Develop new user-facing features in large scale application.','Bachelor in Finance from any reputed University.'),
+(4,'Head of Finance & Accounts','itmagnet@gmail.com','Internship','New DOHS, Mohakhali','Finance Management','Assume a high level of ownership of all work developed by members of the team.Develop new user-facing features in large scale application.','Bachelor in Finance from any reputed University.'),
+(4,'Commercial Manager','itmagnet@gmail.com','Full-time','New DOHS, Mohakhali','Business','Assume a high level of ownership of all work developed by members of the team.Develop new user-facing features in large scale application.','Bachelor in Business from any reputed University.'),
+(4,'Regional Sales Manager ','itmagnet@gmail.com','Full-time','New DOHS, Mohakhali','Marketing & Sales','Assume a high level of ownership of all work developed by members of the team.Develop new user-facing features in large scale application.','Bachelor in Marketing from any reputed University.'),
 
-
-
-
-UPDATE jobseekerinfo
-SET jobseeker_name = '1', username = 's', education = '3' ,contactno = 4 ,addres = 'qqq',email='@gmail',interest='pp'
-WHERE jobseeker_id =20
-
-
-
-select DISTINCT Company.company_name,Company.company_details from Company join PostAJob
-on Company.company_id = PostAJob.company_id 
-where Company.company_id in (select company_id from PostAJob where job_id =1)
+(4,'Graphic Designer','itmagnet@gmail.com','Full-time','New DOHS, Mohakhali','Telecommunication','Assume a high level of ownership of all work developed by members of the team.Develop new user-facing features in large scale application.','B.Sc in CSE from any reputed University.Develop Web & App UI Design.'),
+(4,'Senior PHP Developer','itmagnet@gmail.com','Full-time','New DOHS, Mohakhali','Telecommunication','Assume a high level of ownership of all work developed by members of the team.Develop new user-facing features in large scale application.','B.Sc in CSE from any reputed University.The applicants should have experience in the following area(s): Angular, CodeIgniter, Laravel, PHP, ReactJS, WordPress plugins development, wordpress theme development, YII'),
+(4,'Motion Graphics & Creative Designer (IT Products)','itmagnet@gmail.com','Full-time','New DOHS, Mohakhali','Telecommunication','Assume a high level of ownership of all work developed by members of the team.Develop new user-facing features in large scale application.','B.Sc in CSE from any reputed University.Deep understanding of color and ability to create graphical contents as per target audience and product campaign.'),
+(4,'Information Management Assistant','itmagnet@gmail.com','Full-time','New DOHS, Mohakhali','Telecommunication','Assume a high level of ownership of all work developed by members of the team.Develop new user-facing features in large scale application.','B.Sc in CSE from any reputed University.');
 
 
 
-select * from PostAJob where job_id not in  (select job_id  from ApplyforJob where jobseeker_id = 1 and (applystatus=0 or applystatus=1) ) 
+insert into Login values
+('admin','admin','admin'),
+
+('TMSSICT','1234','recruiter'),('TahamExpress','1234','recruiter'),('AdvancedIT','1234','recruiter'),('ITMagnet','1234','recruiter'),('DreamOnline','1234','recruiter'),('NetCoden','1234','recruiter'),
+('OculinTech.','1234','recruiter'),('DigiconTechnologies','1234','recruiter'),('TrustInfoTech','1234','recruiter'),('Softifybd','1234','recruiter'),('BRACBank','1234','recruiter'),('IPDCFinance','1234','recruiter'),
+('MeridianFinanceInvestment','1234','recruiter'),('IIDFC','1234','recruiter'),('Xfactory','1234','recruiter'),('MIDAS','1234','recruiter'),('FirstCapitalSecuritiesLimited','1234','recruiter'),('PresidencyUniversity','1234','recruiter'),
+('BAC','1234','recruiter'),('OxfordInternationalSchool','1234','recruiter'),('MushroomTF','1234','recruiter'),('HotelElaf','1234','recruiter'),('SarahResort','1234','recruiter'),('MomoInn','1234','recruiter'),
+('BengalGroup','1234','recruiter'),('ProbashiPalli','1234','recruiter'),('Zihantoy','1234','recruiter'),('NeucoIndustries','1234','recruiter'),('LeReve','1234','recruiter'),('AlimIndustries','1234','recruiter'),
+('AlHaramainHospital','1234','recruiter'),('PurpleAlgo','1234','recruiter'),('OrionPharma','1234','recruiter'),('JMIGroup','1234','recruiter'),('Healthcare','1234','recruiter'),('Bangla Insider Ltd.','1234','recruiter'),('MSS','1234','recruiter'),
+('BJIT','1234','recruiter'),('JamunaElectronics','1234','recruiter'),('RFL','1234','recruiter'),
+
+
+('sabiha','3456','jobseeker'),('afrin','3456','jobseeker'),('warifa','3456','jobseeker'),('fatema','3456','jobseeker'),('maheru','3456','jobseeker'),('habiba','3456','jobseeker'),('ovi','3456','jobseeker'),
+('sadman','3456','jobseeker'),('mahbub','3456','jobseeker'),('nadira','3456','jobseeker'),('mashruka','3456','jobseeker'),('tanvir','3456','jobseeker'),('rifat','3456','jobseeker'),
+('zohan','3456','jobseeker'),('bushra','3456','jobseeker'),('kheya','3456','jobseeker'),('shoumik','3456','jobseeker'),
+('sadia','3456','jobseeker'),('tisha','3456','jobseeker');
 
 
 
-select * from PostAJob where (requirment LIKE '%we%' or requirment LIKE '%dz%') AND (job_id not in  (select job_id  from ApplyforJob where jobseeker_id = 1 and (applystatus=0 or applystatus=1) ) )
-
-
-select * from PostAJob where 
-(requirment not LIKE '%w%' ) AND
- (job_id not in  (select job_id  from ApplyforJob 
- where jobseeker_id = 3 and (applystatus=0 or applystatus=1) ) )
+delete from Login
+delete from Company
+delete from jobseekerinfo
+delete from ApplyforJob
+delete from PostAJob 

@@ -42,20 +42,21 @@
                             <a class="nav-link" href="HomePage.aspx">Home <span class="sr-only">(current)</span></a>
                         </li>
                   
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Search Candidate</a>
-                        </li>
+                       
                         <li class="nav-item">
                             <a class="nav-link" href="#">About Us</a>
                         </li>    
                         
                          <li class="nav-item">
-                                    <a class="nav-link" href="postajob.aspx" style="width: 80px;">Post a job</a>
+                                    <a class="nav-link" href="postajob.aspx">Post a job</a>
                            </li >
                           
                            <li class="nav-item">
-                                <a class="nav-link" href="joblist.aspx" style="width: 80px;">Job List</a>
+                                <a class="nav-link" href="joblist.aspx">Job List</a>
                            </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="/Recruiter_login.aspx?LogoutId=<%:1 %>">Logout</a>
+                        </li>
 
 
                     </ul>
@@ -110,8 +111,8 @@
                                 <td class="text-right">
                                    
                                     <a class="btn btn-warning badge-pill" href="/ApplicantDetails.aspx?ApplicantId=<%: data.apply_id %>" style="width: 80px;"> Details</a>
-                                    <a class="btn btn-warning badge-pill" href="applicantlist.aspx?acceptId=<%: data.apply_id %>" style="width: 80px;"> Accept</a>
-                                    <a class="btn btn-warning badge-pill" href="applicantlist.aspx?deleteId=<%: data.apply_id %>" style="width: 80px;"> Delete</a>
+                                    <a class="btn btn-success badge-pill" href="applicantlist.aspx?acceptId=<%: data.apply_id %>" style="width: 80px;"> Accept</a>
+                                    <a class="btn btn-danger badge-pill" href="applicantlist.aspx?deleteId=<%: data.apply_id %>" style="width: 80px;"> Delete</a>
 
                                 </td>
                             </tr>

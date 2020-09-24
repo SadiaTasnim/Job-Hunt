@@ -42,20 +42,19 @@
                             <a class="nav-link" href="HomePage.aspx">Home <span class="sr-only">(current)</span></a>
                         </li>
                       
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Search Candidate</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About Us</a>
-                        </li>         
+                  
+                             
                          <li class="nav-item">
                             <a class="nav-link" href="#">About Us</a>
                         </li>  
                         <li class="nav-item">
-                              <a class="nav-link" href="wantjob.aspx" style="width: 80px;">Want a job</a>
+                              <a class="nav-link" href="wantjob.aspx" >Want a job</a>
                         </li>  
                         <li class="nav-item">
-                              <a class="nav-link" href="appliedjobs.aspx" style="width: 80px;">Applied Jobs</a>
+                              <a class="nav-link" href="appliedjobs.aspx" >Applied Jobs</a>
+                        </li>
+                              <li class="nav-item">
+                             <a class="nav-link" href="/Jobseeker_login.aspx?LogoutId=<%:1 %>">Logout</a>
                         </li>
                     </ul>
                  
@@ -82,12 +81,12 @@
     <div class="container">
         <div class="jumbotron" style="margin-top: 50px">
             <div class="card">
-                <h5 class="card-header">Top Searched Jobs</h5>
+                <h5 class="card-header">Applied Jobs</h5>
                 <div class="card-body">
                     
-                    <div class="form-group pull-right">
+        <!--            <div class="form-group pull-right">
                         <input type="text" class="search form-control" placeholder="Search here..." />
-                    </div>
+                    </div>   -->
                     <table class="table table-hover table-bordered">
                         <thead class="thead-dark">
                             <tr>
@@ -111,7 +110,7 @@
                                     </td>
                                      <td class="text-right">
                      
-                                      <asp:Label ID="Label1" runat="server" Font-Size="Small" ForeColor="Blue" Text="Accepted"></asp:Label>
+                                      <asp:Label ID="Label1" runat="server" Font-Size="Small" ForeColor="#3e9e46" Text="Accepted" Font-Bold="True"></asp:Label>
                                    <a class="btn btn-warning badge-pill" href="appliedjobs.aspx?deleteId=<%: data.jid %>" style="width: 80px;"> Delete</a>
 
                                      
@@ -131,8 +130,8 @@
                                     </td>
                                      <td class="text-right">
                      
-                                     <asp:Label ID="Label3" runat="server" Font-Size="Small" ForeColor="Red" Text="pending"></asp:Label>
-                                   <a class="btn btn-warning badge-pill" href="appliedjobs.aspx?deleteId=<%: data.jid %>" style="width: 80px;"> Delete</a>
+                                     <asp:Label ID="Label3" runat="server" Font-Size="Small" ForeColor="Blue" Text="pending"></asp:Label>
+                                   <a class="btn btn-danger badge-pill" href="appliedjobs.aspx?deleteId=<%: data.jid %>" > Delete</a>
 
                                      
 

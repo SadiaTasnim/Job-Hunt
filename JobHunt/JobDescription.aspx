@@ -42,17 +42,18 @@
                             <a class="nav-link" href="HomePage.aspx">Home <span class="sr-only">(current)</span></a>
                         </li>
               
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Search Candidate</a>
-                        </li>
+                    
                         <li class="nav-item">
                             <a class="nav-link" href="#">About Us</a>
                         </li>  
                         <li class="nav-item">
-                              <a class="nav-link" href="wantjob.aspx" style="width: 80px;">Want a job</a>
+                              <a class="nav-link" href="wantjob.aspx" >Want A Job</a>
                         </li>  
                         <li class="nav-item">
-                              <a class="nav-link" href="appliedjobs.aspx" style="width: 80px;">Applied Jobs</a>
+                              <a class="nav-link" href="appliedjobs.aspx" >Applied Jobs</a>
+                        </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="/Jobseeker_login.aspx?LogoutId=<%:1 %>">Logout</a>
                         </li>
                     </ul>
                                 
@@ -104,7 +105,7 @@
                                        <h4>Experience Requirements:</h4>
                                              <p><%: data.reqrmnts %></p>
                                     
-                       <a class="btn btn-warning badge-pill" href="/applyjob.aspx?ApplyId=<%: data.jid %>" style="width: 80px;"> Apply</a> 
+                       <a class="btn btn-success badge-pill" href="/applyjob.aspx?ApplyId=<%: data.jid %>" style="width: 80px;"> Apply</a> 
                      
                        <% } //foreach %>
                    </div>

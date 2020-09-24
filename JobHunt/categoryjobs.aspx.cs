@@ -13,7 +13,7 @@ namespace JobHunt
     public partial class categoryjobs : System.Web.UI.Page
     {
         private String category = "";
-    
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -25,16 +25,16 @@ namespace JobHunt
 
         public List<JobHunt.Models.JobDetails> getWhileLoopDataList()
         {
-            
+
             int no = 1;
-           
+
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon"].ToString());
             con.Open();
-          
 
 
 
-            SqlCommand cmd = new SqlCommand("select * from PostAJob where Category LIKE '%"+this.category+"%'");
+
+            SqlCommand cmd = new SqlCommand("select * from PostAJob where Category LIKE '%" + this.category + "%'");
 
 
             cmd.CommandType = System.Data.CommandType.Text;
@@ -51,7 +51,7 @@ namespace JobHunt
                 jobDetails.no = no;
                 jobDetails.id = id;
                 jobDetails.Name = Name;
-            
+
                 data.Add(jobDetails);
                 no++;
             }
